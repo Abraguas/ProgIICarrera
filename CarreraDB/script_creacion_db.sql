@@ -50,3 +50,18 @@ begin
     insert into detalles_carrera values(@id_carrera,@anio,@cuatrimestre,@id_materia)
 end 
 go
+
+create procedure insertar_asignatura
+@nombre varchar (50)
+as
+begin
+	insert into asignaturas values (@nombre)
+end
+go
+
+create procedure dbo.consultar_asignatura
+as
+begin
+	select * from asignaturas
+end
+go
