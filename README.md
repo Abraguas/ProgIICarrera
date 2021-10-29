@@ -1,6 +1,12 @@
 # ProgIICarrera
 
+## Cuestiones a definir:
+- Division de los proyectos (LISTO: back, front y api)
+- Patrones de diseño que vamos a usar
+- Uso de identity en las tablas de la DB
+
 ## Por hacer:
-- Definir cómo vamos a dividir los proyectos (Back, Front y API o uno por cada capa)
-- Definir que patrones de diseño vamos a usar
+### Backend:
+### API:
+### Frontend:
 
