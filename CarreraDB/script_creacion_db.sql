@@ -30,3 +30,23 @@ create table detalles_carrera (
     references asignaturas (id_asignatura)
 )
 go
+
+create procedure insertar_carrera
+@nombre varchar(50),
+@titulo varchar(50)
+as
+begin 
+    insert into carreras values(@nombre,@titulo)
+end 
+go
+
+create procedure insertar_detalle
+@id_carrera int,
+@anio int,
+@cuatrimestre int,
+@id_materia int
+as
+begin 
+    insert into detalles_carrera values(@id_carrera,@anio,@cuatrimestre,@id_materia)
+end 
+go
