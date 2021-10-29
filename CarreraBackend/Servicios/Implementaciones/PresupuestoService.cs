@@ -22,7 +22,7 @@ namespace CarreraBackend.Servicios.Implementaciones
         //}
         public List<Asignatura> ConsultarAsignatura()
         {
-           return dao.GetAsignatura;
+           return dao.GetAsignaturas();
         }
         public bool GrabarCarrera(Carrera oCarrera)
         {
