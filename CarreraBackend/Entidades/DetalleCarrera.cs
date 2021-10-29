@@ -10,7 +10,7 @@ namespace CarreraBackend.Entidades
     {
         public int AnioCursado { get; set; }
         public int Cuatrimestre { get; set; }
-        public Asignatura materia { get; set; }
+        public Asignatura Materia { get; set; }
 
     }
 }
