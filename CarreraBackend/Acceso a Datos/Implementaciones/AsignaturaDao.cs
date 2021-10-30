@@ -10,9 +10,12 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
 {
     class AsignaturaDao : IAsignaturaDao
     {
+        private DaoHelper helper = DaoHelper.ObtenerInstancia();
         public bool Save(Asignatura asignatura)
         {
-            throw new NotImplementedException();
+            List<Parametro> p = new List<Parametro>();
+            p.Add(new Parametro("@nombre", asignatura.Nombre));
+            return helper.InsertarAuxiliar("insertar_asignatura", p );
         }
         public List<Asignatura> Get()
         {
