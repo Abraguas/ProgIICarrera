@@ -92,5 +92,18 @@ namespace CarreraBackend.Acceso_a_Datos
             return helper.EjecutarSpEntrada("borrar_carrera", p);
         }
 
+        public Carrera GetByID(int id)
+        {
+            //completar...
+            DataTable resultado = helper.ConsultarConParametro("consultar_carrera_id", new Parametro("@id",Convert.ToString(id)));
+            Carrera carrera = new Carrera(
+                (int)resultado.Rows[1]["id_carrera"],
+                (string)resultado.Rows[1]["nombre"],
+                (string)resultado.Rows[1]["titulo"],
+                new List<DetalleCarrera>()
+                );
+            throw new NotImplementedException();
+            return carrera;
+        }
     }
 }
