@@ -81,7 +81,7 @@ namespace CarreraBackend.Acceso_a_Datos
         //}
 
 
-        public bool Update(object entidad)
+        public bool Update(Carrera carrera)
         {
             throw new NotImplementedException();
         }

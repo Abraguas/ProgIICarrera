@@ -12,7 +12,7 @@ namespace CarreraBackend.Acceso_a_Datos
         bool Save(Carrera carrera);
         List<Carrera> Get();
  //       Carrera GetByID();
-        bool Update(object entidad);
-        bool DeleteByID(int id)
+        bool Update(Carrera carrera);
+        bool DeleteByID(int id);
     }
 }
