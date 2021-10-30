@@ -87,7 +87,9 @@ namespace CarreraBackend.Acceso_a_Datos
         }
         public bool DeleteByID(int id)
         {
-            throw new NotImplementedException();
+            List<Parametro> p = new List<Parametro>();
+            p.Add(new Parametro("@id", Convert.ToString(id)));
+            return helper.EjecutarSpEntrada("borrar_asignatura", p);
         }
 
     }
