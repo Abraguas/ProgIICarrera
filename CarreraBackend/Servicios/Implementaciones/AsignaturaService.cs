@@ -26,17 +26,18 @@ namespace CarreraBackend.Servicios.Implementaciones
 
         public bool Borrar(int id)
         {
-            throw new NotImplementedException();
+            return dao.DeleteByID(id);
         }
 
         public List<Asignatura> Consultar()
         {
-            throw new NotImplementedException();
+            return dao.Get();
         }
 
         public bool Grabar(Asignatura asignatura)
         {
-            throw new NotImplementedException();
+            //aca podemos añadir validacion de si ya existe
+            return dao.Save(asignatura);
         }
     }
 }
