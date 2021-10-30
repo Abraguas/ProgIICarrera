@@ -89,7 +89,7 @@ namespace CarreraBackend.Acceso_a_Datos
         {
             List<Parametro> p = new List<Parametro>();
             p.Add(new Parametro("@id", Convert.ToString(id)));
-            return helper.EjecutarSpEntrada("borrar_asignatura", p);
+            return helper.EjecutarSpEntrada("borrar_carrera", p);
         }
 
     }
