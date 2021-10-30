@@ -10,9 +10,14 @@ namespace CarreraBackend.Servicios
 {
     class ServiceFactoryImp : AbstractServiceFactory
     {
-        public override IService CrearService()
+        public override ICarreraService CrearCarreraService()
         {
             return new CarreraService();
+        }
+
+        public override IAsignaturaService CrearAsignaturaService()
+        {
+            return new AsignaturaService();
         }
     }
 }
