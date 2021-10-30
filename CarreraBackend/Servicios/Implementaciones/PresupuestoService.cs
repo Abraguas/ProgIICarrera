@@ -11,7 +11,7 @@ namespace CarreraBackend.Servicios.Implementaciones
 {
     class CarreraService : IService
     {
-        private IDao dao; 
+        private ICarreraDao dao; 
         public CarreraService()
         {
             dao = new CarreraDao();

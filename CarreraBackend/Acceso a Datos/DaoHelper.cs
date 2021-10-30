@@ -48,6 +48,26 @@ namespace CarreraBackend.Acceso_a_Datos
             }
             return tabla;
         }
+        public DataTable ConsultarConParametro(string nombreSP, Parametro parametro)
+        {
+            DataTable tabla = new DataTable();
+            comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue(parametro.Nombre,parametro.Valor);
+            try
+            {
+                conexion.Open();
+                tabla.Load(comando.ExecuteReader());
+                conexion.Close();
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            return tabla;
+        }
         public object EjecutarSPSalida(string sp, string nomParametro)
         {
             comando = new SqlCommand();

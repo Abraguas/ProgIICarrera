@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace CarreraBackend.Acceso_a_Datos
 {
-    interface IDao
+    interface ICarreraDao
     {
         bool Save(Carrera carrera);
-        List<Asignatura> GetAsignaturas();
-
+        List<Carrera> Get();
+ //       Carrera GetByID();
+        bool Update(object entidad);
+        bool DeleteByID(int id)
     }
 }
