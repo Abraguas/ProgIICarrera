@@ -91,6 +91,33 @@ namespace CarreraBackend.Acceso_a_Datos
             }
             return param.Value;
         }
+        public bool InsertarAuxiliar(string nombreSP, List<Parametro> parametros) 
+        {
+            bool flag = true;
+            try
+            {
+                comando = new SqlCommand(nombreSP, conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                foreach (Parametro paramtetro in parametros)
+                {
+                    comando.Parameters.AddWithValue(paramtetro.Nombre, paramtetro.Valor);
+                }
+
+                conexion.Open();
+                comando.ExecuteNonQuery();
+               
+            }
+            catch (SqlException e)
+            {
+                //throw e;
+                flag = false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return flag;
+        }
         public bool InsertarMaestroDetalle(string spMaestro, List<Parametro> parametrosMaestro,
                                             string spDetalles, List<List<Parametro>> parametrosDetalles)
         {
