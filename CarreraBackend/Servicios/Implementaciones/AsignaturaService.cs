@@ -26,6 +26,7 @@ namespace CarreraBackend.Servicios.Implementaciones
 
         public bool Borrar(int id)
         {
+            //validar existencia 
             return dao.DeleteByID(id);
         }
 
