@@ -65,3 +65,13 @@ begin
 	select * from asignaturas
 end
 go
+
+create procedure consultar_detalles_id
+@id int
+as
+begin
+	select d.id_detalle, d.id_carrera, d.anio_cursado, d.cuatrimestre, d.id_materia, a.nombre
+	from detalles_carrera join asignaturas on a.id_asignatura = d.id_materia
+	where d.id_carrera = @id
+end
+go
