@@ -8,8 +8,13 @@
 ## Por hacer:
 ### Backend:
 - [ ] Completar el CRUD
-- [ ] Dao para asignaturas si decidimos hacerlo
-- [ ] Crear los SP que falten
+- [x] Dao para asignaturas si decidimos hacerlo (hecho en branch crud)
+- [ ] Crear los SP que falten:
+  - [ ]  consultar_detalle_id (consultar detalle segun el id_carrera)
+  - [ ]  borrar_carrera 
+  - [ ]  borrar_asignatura
+  - [ ]  consultar_carrera_id (falta determinar como conviene que funcione)
+  - [ ]  insertar_asignatura
 - [ ] Testear
 ### API:
 - [ ] Get, Post, Put y Delete de las entidades que haga falta
