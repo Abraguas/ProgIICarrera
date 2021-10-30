@@ -59,7 +59,7 @@ begin
 end
 go
 
-create procedure dbo.consultar_asignatura
+create procedure consultar_asignatura
 as
 begin
 	select * from asignaturas
