@@ -91,7 +91,7 @@ namespace CarreraBackend.Acceso_a_Datos
             }
             return param.Value;
         }
-        public bool InsertarAuxiliar(string nombreSP, List<Parametro> parametros) 
+        public bool EjecutarSpEntrada(string nombreSP, List<Parametro> parametros) 
         {
             bool flag = true;
             try
