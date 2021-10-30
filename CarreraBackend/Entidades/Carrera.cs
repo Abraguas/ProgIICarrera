@@ -18,8 +18,9 @@ namespace CarreraBackend.Entidades
             Detalles = new List<DetalleCarrera>();
         }
 
-        public Carrera(string nombre, string titulo, List<DetalleCarrera> detalles)
+        public Carrera(int id, string nombre, string titulo, List<DetalleCarrera> detalles)
         {
+            Id = id;
             Nombre = nombre;
             Titulo = titulo;
             Detalles = detalles;

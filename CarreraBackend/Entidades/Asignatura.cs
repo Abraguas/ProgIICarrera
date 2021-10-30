@@ -8,15 +8,16 @@ namespace CarreraBackend.Entidades
 {
     public class Asignatura
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
 
         public Asignatura()
         {
         }
 
-        public Asignatura(string nombre)
+        public Asignatura(int id, string nombre)
         {
+            Id = id;
             Nombre = nombre;
         }
     }
