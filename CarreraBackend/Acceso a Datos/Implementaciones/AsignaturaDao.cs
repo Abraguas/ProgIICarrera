@@ -36,5 +36,9 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
             return helper.EjecutarSpEntrada("borrar_asignatura", p);
         }
 
+        public bool Update(Asignatura asignatura)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
