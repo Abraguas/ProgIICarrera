@@ -8,9 +8,21 @@ namespace CarreraBackend.Entidades
 {
    public class DetalleCarrera
     {
+        public int Id { get; set; }
         public int AnioCursado { get; set; }
         public int Cuatrimestre { get; set; }
         public Asignatura Materia { get; set; }
 
+        public DetalleCarrera(int id, int anioCursado, int cuatrimestre, Asignatura materia)
+        {
+            Id = Id;
+            AnioCursado = anioCursado;
+            Cuatrimestre = cuatrimestre;
+            Materia = materia;
+        }
+
+        public DetalleCarrera()
+        {
+        }
     }
 }
