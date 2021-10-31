@@ -26,7 +26,11 @@ namespace CarreraBackend.Servicios.Implementaciones
 
         public bool Borrar(int id)
         {
-            throw new NotImplementedException();
+            if (dao.ExistsByID(id))
+            {
+                return dao.DeleteByID(id);
+            }
+            else return false;
         }
 
         //public List<Carrera> ConsultarCarreras(List<Parametro> criterios)

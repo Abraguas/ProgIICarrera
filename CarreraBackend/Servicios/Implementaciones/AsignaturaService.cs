@@ -26,8 +26,11 @@ namespace CarreraBackend.Servicios.Implementaciones
 
         public bool Borrar(int id)
         {
-            //validar existencia 
-            return dao.DeleteByID(id);
+            if (dao.ExistsByID(id))
+            {
+                return dao.DeleteByID(id);
+            }
+            else return false;
         }
 
         public List<Asignatura> Consultar()
@@ -37,8 +40,9 @@ namespace CarreraBackend.Servicios.Implementaciones
 
         public bool Grabar(Asignatura asignatura)
         {
-            //aca podemos añadir validacion de si ya existe
+
             return dao.Save(asignatura);
+
         }
     }
 }
