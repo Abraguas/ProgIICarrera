@@ -9,9 +9,9 @@ namespace CarreraBackend.Servicios.Interfaces
 {
    public interface ICarreraService
     {
-        //public bool RegistrarBajaCarrera(int carrera);
-        //public List<Carrera> ConsultarCarreras(List<Parametro> criterios);
         public List<Carrera> Consultar();
         public bool Grabar(Carrera oCarrera);
+        public bool Actualizar();
+        public bool Borrar(int id);
     }
 }

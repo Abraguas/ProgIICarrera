@@ -18,6 +18,17 @@ namespace CarreraBackend.Servicios.Implementaciones
             dao = new CarreraDao();
 
         }
+
+        public bool Actualizar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Borrar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         //public List<Carrera> ConsultarCarreras(List<Parametro> criterios)
         //{
         //    dao.GetByFilters(criterios);
