@@ -9,7 +9,7 @@
 ### Backend:
 - [ ] Completar el CRUD
 - [x] Dao para asignaturas si decidimos hacerlo (hecho en branch crud)
-- [ ] Crear los SP que falten:
+- [x] Crear los SP que falten:
   - [x]  consultar_detalle_id (consultar detalle segun el id_carrera)
   - [x]  borrar_carrera 
   - [x]  borrar_asignatura
