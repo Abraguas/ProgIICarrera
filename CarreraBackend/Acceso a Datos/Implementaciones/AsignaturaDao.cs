@@ -33,9 +33,13 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
         {
             List<Parametro> p = new List<Parametro>();
             p.Add(new Parametro("@id", Convert.ToString(id)));
-            return helper.EjecutarSpEntrada("borrar_asignatura", p);
+            return helper.EjecutarSpEntrada("borrar_asignatura_id", p);
         }
-
+        public bool ExistsByID(int id)
+        {
+            int resultado = (int)helper.ConsultarEscalar("verificar_asignatura_id", new Parametro("@id", Convert.ToString(id)));
+            return resultado > 0;
+        }
         public bool Update(Asignatura asignatura)
         {
             throw new NotImplementedException();

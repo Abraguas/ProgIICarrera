@@ -74,13 +74,6 @@ namespace CarreraBackend.Acceso_a_Datos
             return listaC;
         }
 
-        //Checkear si es necesario
-        //public Carrera GetByID()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-
         public bool Update(Carrera carrera)
         {
             throw new NotImplementedException();
@@ -89,21 +82,13 @@ namespace CarreraBackend.Acceso_a_Datos
         {
             List<Parametro> p = new List<Parametro>();
             p.Add(new Parametro("@id", Convert.ToString(id)));
-            return helper.EjecutarSpEntrada("borrar_carrera", p);
+            return helper.EjecutarSpEntrada("borrar_carrera_id", p);
         }
 
-        public Carrera GetByID(int id)
+        public bool ExistsByID(int id)
         {
-            //completar...
-            DataTable resultado = helper.ConsultarConParametro("consultar_carrera_id", new Parametro("@id",Convert.ToString(id)));
-            Carrera carrera = new Carrera(
-                (int)resultado.Rows[1]["id_carrera"],
-                (string)resultado.Rows[1]["nombre"],
-                (string)resultado.Rows[1]["titulo"],
-                new List<DetalleCarrera>()
-                );
-            throw new NotImplementedException();
-            return carrera;
+            int resultado = (int)helper.ConsultarEscalar("verificar_carrera_id", new Parametro("@id",Convert.ToString(id)));
+            return resultado > 0;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace CarreraBackend.Acceso_a_Datos.Interfaces
         List<Asignatura> Get();
         bool DeleteByID(int id);
         bool Update(Asignatura asignatura);
+        bool ExistsByID(int id);
 
     }
 }
