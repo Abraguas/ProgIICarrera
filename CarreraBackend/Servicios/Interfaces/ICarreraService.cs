@@ -11,7 +11,7 @@ namespace CarreraBackend.Servicios.Interfaces
     {
         public List<Carrera> Consultar();
         public bool Grabar(Carrera oCarrera);
-        public bool Actualizar();
+        public bool Actualizar(Carrera oCarrera);
         public bool Borrar(int id);
     }
 }

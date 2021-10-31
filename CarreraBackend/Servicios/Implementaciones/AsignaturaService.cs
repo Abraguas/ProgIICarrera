@@ -19,9 +19,13 @@ namespace CarreraBackend.Servicios.Implementaciones
             dao = new AsignaturaDao();
         }
 
-        public bool Actualizar()
+        public bool Actualizar(Asignatura asignatura)
         {
-            throw new NotImplementedException();
+            if (dao.ExistsByID(asignatura.Id))
+            {
+                return dao.Update(asignatura);
+            }
+            else return false;
         }
 
         public bool Borrar(int id)

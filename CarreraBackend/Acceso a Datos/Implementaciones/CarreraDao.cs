@@ -76,7 +76,11 @@ namespace CarreraBackend.Acceso_a_Datos
 
         public bool Update(Carrera carrera)
         {
-            throw new NotImplementedException();
+            List<Parametro> p = new List<Parametro>();
+            p.Add(new Parametro("@nombre", carrera.Nombre));
+            p.Add(new Parametro("@titulo", carrera.Titulo));
+            p.Add(new Parametro("@id", Convert.ToString(carrera.Id)));
+            return helper.EjecutarSpEntrada("actualizar_carrera", p);
         }
         public bool DeleteByID(int id)
         {

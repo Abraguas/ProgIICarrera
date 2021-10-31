@@ -42,7 +42,10 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
         }
         public bool Update(Asignatura asignatura)
         {
-            throw new NotImplementedException();
+            List<Parametro> p = new List<Parametro>();
+            p.Add(new Parametro("@nombre", asignatura.Nombre));
+            p.Add(new Parametro("@id", Convert.ToString(asignatura.Id)));
+            return helper.EjecutarSpEntrada("actualizar_asignatura", p);
         }
     }
 }

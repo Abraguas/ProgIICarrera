@@ -19,9 +19,13 @@ namespace CarreraBackend.Servicios.Implementaciones
 
         }
 
-        public bool Actualizar()
+        public bool Actualizar(Carrera carrera)
         {
-            throw new NotImplementedException();
+            if (dao.ExistsByID(carrera.Id))
+            {
+                return dao.Update(carrera);
+            }
+            else return false;
         }
 
         public bool Borrar(int id)
