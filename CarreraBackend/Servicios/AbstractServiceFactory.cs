@@ -9,6 +9,7 @@ namespace CarreraBackend.Servicios
 {
    public abstract class AbstractServiceFactory
     {
-        public abstract IService CrearService();
+        public abstract ICarreraService CrearCarreraService();
+        public abstract IAsignaturaService CrearAsignaturaService();
     }
 }

@@ -48,28 +48,75 @@ namespace CarreraBackend.Acceso_a_Datos
             }
             return tabla;
         }
-        public object EjecutarSPSalida(string sp, string nomParametro)
+        public DataTable ConsultarConParametro(string nombreSP, Parametro parametro)
         {
+            DataTable tabla = new DataTable();
             comando = new SqlCommand();
-            comando.CommandType = CommandType.StoredProcedure;
             comando.Connection = conexion;
-            comando.CommandText = sp;
-            SqlParameter param = new SqlParameter();
-            param.ParameterName = nomParametro;
-            param.Direction = ParameterDirection.Output;
-            param.SqlDbType = SqlDbType.Int;
-            comando.Parameters.Add(param);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            comando.Parameters.AddWithValue(parametro.Nombre,parametro.Valor);
             try
             {
                 conexion.Open();
-                comando.ExecuteReader();
+                tabla.Load(comando.ExecuteReader());
                 conexion.Close();
             }
             catch (SqlException e)
             {
                 throw e;
             }
-            return param.Value;
+            return tabla;
+        }
+        //public object EjecutarSPSalida(string sp, string nomParametro) [--Borrar si no la usamos--]
+        //{
+        //    comando = new SqlCommand();
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.Connection = conexion;
+        //    comando.CommandText = sp;
+        //    SqlParameter param = new SqlParameter();
+        //    param.ParameterName = nomParametro;
+        //    param.Direction = ParameterDirection.Output;
+        //    param.SqlDbType = SqlDbType.Int;
+        //    comando.Parameters.Add(param);
+        //    try
+        //    {
+        //        conexion.Open();
+        //        comando.ExecuteReader();
+        //        conexion.Close();
+        //    }
+        //    catch (SqlException e)
+        //    {
+        //        throw e;
+        //    }
+        //    return param.Value;
+        //}
+        public bool EjecutarSpEntrada(string nombreSP, List<Parametro> parametros) 
+        {
+            bool flag = true;
+            try
+            {
+                comando = new SqlCommand(nombreSP, conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                foreach (Parametro paramtetro in parametros)
+                {
+                    comando.Parameters.AddWithValue(paramtetro.Nombre, paramtetro.Valor);
+                }
+
+                conexion.Open();
+                comando.ExecuteNonQuery();
+               
+            }
+            catch (SqlException e)
+            {
+                //throw e;
+                flag = false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return flag;
         }
         public bool InsertarMaestroDetalle(string spMaestro, List<Parametro> parametrosMaestro,
                                             string spDetalles, List<List<Parametro>> parametrosDetalles)
@@ -90,16 +137,16 @@ namespace CarreraBackend.Acceso_a_Datos
                 comando.ExecuteNonQuery();
 
                 //DETALLES
-                comando = new SqlCommand(spDetalles, conexion, transaccion);
-                comando.CommandType = CommandType.StoredProcedure;
                 foreach (List<Parametro> parametros in parametrosDetalles)
                 {
+                    comando = new SqlCommand(spDetalles, conexion, transaccion);
+                    comando.CommandType = CommandType.StoredProcedure;
                     foreach (Parametro parametroD in parametros)
                     {
                         comando.Parameters.AddWithValue(parametroD.Nombre, parametroD.Valor);
                     }
+                    comando.ExecuteNonQuery();
                 }
-                comando.ExecuteNonQuery();
                 transaccion.Commit();
             }
             catch (SqlException e)
@@ -113,6 +160,29 @@ namespace CarreraBackend.Acceso_a_Datos
                 conexion.Close();
             }
             return flag;
+        }
+
+
+        public object ConsultarEscalar(string sp, Parametro parametro)
+        {
+            object resultado;
+            comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = sp;
+            comando.Parameters.AddWithValue(parametro.Nombre, parametro.Valor);
+            try
+            {
+                conexion.Open();
+                //Devuelve el valor de la primera columna en la primera fila
+                resultado = comando.ExecuteScalar();
+                conexion.Close();
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            return resultado;
         }
     }
 }
