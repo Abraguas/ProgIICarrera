@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarreraBackend.Servicios.Implementaciones
 {
-    class CarreraService : ICarreraService
+    public class CarreraService : ICarreraService
     {
         private ICarreraDao dao;
         public CarreraService()

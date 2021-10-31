@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarreraBackend.Servicios.Implementaciones
 {
-    class AsignaturaService : IAsignaturaService
+   public class AsignaturaService : IAsignaturaService
     {
         private IAsignaturaDao dao;
 
