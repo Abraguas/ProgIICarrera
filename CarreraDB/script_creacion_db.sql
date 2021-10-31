@@ -71,7 +71,16 @@ create procedure consultar_detalles_id
 as
 begin
 	select d.id_detalle, d.id_carrera, d.anio_cursado, d.cuatrimestre, d.id_materia, a.nombre
-	from detalles_carrera join asignaturas on a.id_asignatura = d.id_materia
+	from detalles_carrera d join asignaturas a on a.id_asignatura = d.id_materia
 	where d.id_carrera = @id
 end
 go
+
+create procedure verificar_carrera_id
+@id int
+as 
+begin 
+    select count(*)
+    from carreras 
+    where id_carrera = @id
+end
