@@ -16,9 +16,9 @@
   - [x]  verificar_carrera_id
   - [x]  verificar_asignatura_id
   - [x]  insertar_asignatura
-  - [ ]  actualizar_asignatura
-  - [ ]  actualizar_carrera
-  - [ ]  borrar_detalle
+  - [x]  actualizar_asignatura
+  - [x]  actualizar_carrera
+  - [x]  borrar_detalle
 - [ ] Testear
 ### API:
 - [ ] Get, Post, Put y Delete de las entidades que haga falta
