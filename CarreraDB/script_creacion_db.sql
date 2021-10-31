@@ -84,3 +84,25 @@ begin
     from carreras 
     where id_carrera = @id
 end
+go 
+
+create procedure borrar_carrera_id
+@id int 
+as 
+begin 
+    delete detalles_carrera
+    where id_carrera = @id 
+    delete carreras 
+    where id_carrera =@id
+end 
+go
+
+
+create procedure borrar_asignatura_id
+@id int 
+as 
+begin 
+    delete asignaturas
+    where id_asignatura = @id 
+end 
+go
