@@ -112,6 +112,8 @@ create procedure borrar_asignatura_id
 @id int 
 as 
 begin 
+    delete detalles_carrera
+    where id_materia = @id 
     delete asignaturas
     where id_asignatura = @id 
 end 
