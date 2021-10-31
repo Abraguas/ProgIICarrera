@@ -118,3 +118,28 @@ begin
     where id_asignatura = @id 
 end 
 go
+
+create procedure actualizar_carrera
+@id int,
+@nombre varchar(50),
+@titulo varchar(50)
+as
+begin 
+    update carreras 
+    set 
+        nombre = @nombre,
+        titulo = @titulo
+    where id_carrera = @id
+end 
+go
+
+create procedure actualizar_asignatura
+@id int,
+@nombre varchar(50)
+as
+begin 
+    update asignaturas
+    set nombre = @nombre
+    where id_asignatura = @id
+end 
+go
