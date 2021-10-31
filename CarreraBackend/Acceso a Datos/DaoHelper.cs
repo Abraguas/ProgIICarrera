@@ -137,16 +137,16 @@ namespace CarreraBackend.Acceso_a_Datos
                 comando.ExecuteNonQuery();
 
                 //DETALLES
-                comando = new SqlCommand(spDetalles, conexion, transaccion);
-                comando.CommandType = CommandType.StoredProcedure;
                 foreach (List<Parametro> parametros in parametrosDetalles)
                 {
+                    comando = new SqlCommand(spDetalles, conexion, transaccion);
+                    comando.CommandType = CommandType.StoredProcedure;
                     foreach (Parametro parametroD in parametros)
                     {
                         comando.Parameters.AddWithValue(parametroD.Nombre, parametroD.Valor);
                     }
+                    comando.ExecuteNonQuery();
                 }
-                comando.ExecuteNonQuery();
                 transaccion.Commit();
             }
             catch (SqlException e)
