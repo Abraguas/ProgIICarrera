@@ -86,6 +86,16 @@ begin
 end
 go 
 
+create procedure verificar_asignatura_id
+@id int
+as 
+begin 
+    select count(*)
+    from asignaturas
+    where id_asignatura = @id
+end
+go 
+
 create procedure borrar_carrera_id
 @id int 
 as 
