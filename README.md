@@ -14,6 +14,7 @@
   - [x]  borrar_carrera 
   - [x]  borrar_asignatura
   - [x]  verificar_carrera_id
+  - [ ]  verificar_asignatura_id
   - [x]  insertar_asignatura
   - [ ]  actualizar_asignatura
   - [ ]  actualizar_carrera
