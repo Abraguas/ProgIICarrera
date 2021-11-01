@@ -15,7 +15,7 @@ namespace CarreraBackend.Entidades
 
         public DetalleCarrera(int id, int anioCursado, int cuatrimestre, Asignatura materia)
         {
-            Id = Id;
+            Id = id;
             AnioCursado = anioCursado;
             Cuatrimestre = cuatrimestre;
             Materia = materia;

@@ -33,6 +33,7 @@ namespace CarreraBackend.Acceso_a_Datos
                 auxParam.Add(new Parametro("@anio", Convert.ToString(detalle.AnioCursado)));
                 auxParam.Add(new Parametro("@cuatrimestre", Convert.ToString(detalle.Cuatrimestre)));
                 auxParam.Add(new Parametro("@id_materia", Convert.ToString(detalle.Materia.Id)));
+                paramDetalles.Add(auxParam);
             }
 
             return helper.InsertarMaestroDetalle("insertar_carrera",paramMaestro,"insertar_detalle",paramDetalles);
@@ -44,7 +45,7 @@ namespace CarreraBackend.Acceso_a_Datos
             DataTable carreras = helper.ConsultarDB("consultar_carrera");
             DataTable detalles;
             List<Carrera> listaC = new List<Carrera>();
-            List<DetalleCarrera> listaD = new List<DetalleCarrera>();
+            List<DetalleCarrera> listaD;
             Carrera carrera;
             DetalleCarrera detalle;
             foreach (DataRow filaC in carreras.Rows)
@@ -53,9 +54,9 @@ namespace CarreraBackend.Acceso_a_Datos
                 //detalles = helper.ConsultarConParametro("consultar_detalles_id", new Parametro("@id", Convert.ToString(filaC["id_carrera"])));
 
                 detalles = helper.ConsultarConParametro(@"consultar_detalles_id", new Parametro("@id", Convert.ToString(filaC["id_carrera"])));
+                listaD = new List<DetalleCarrera>();
 
-
-                foreach(DataRow filaD in detalles.Rows)
+                foreach (DataRow filaD in detalles.Rows)
                 {
                     detalle = new DetalleCarrera(
                                                  Convert.ToInt32(filaD["id_detalle"]),
@@ -72,6 +73,7 @@ namespace CarreraBackend.Acceso_a_Datos
                                         listaD
                                       );
                 listaC.Add(carrera);
+                
             }
             return listaC;
         }
