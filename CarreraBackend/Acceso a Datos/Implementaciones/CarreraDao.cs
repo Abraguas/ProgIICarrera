@@ -49,10 +49,12 @@ namespace CarreraBackend.Acceso_a_Datos
             DetalleCarrera detalle;
             foreach (DataRow filaC in carreras.Rows)
             {
-                detalles = helper.ConsultarConParametro(
-                                                            "consultar_detalles_id", 
-                                                            new Parametro("@id", Convert.ToString(filaC["id_carrera"]))
-                                                        );
+
+                //detalles = helper.ConsultarConParametro("consultar_detalles_id", new Parametro("@id", Convert.ToString(filaC["id_carrera"])));
+
+                detalles = helper.ConsultarConParametro(@"consultar_detalles_id", new Parametro("@id", Convert.ToString(filaC["id_carrera"])));
+
+
                 foreach(DataRow filaD in detalles.Rows)
                 {
                     detalle = new DetalleCarrera(
