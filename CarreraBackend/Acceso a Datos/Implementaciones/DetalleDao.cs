@@ -12,6 +12,11 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
     {           
         private DaoHelper helper;
 
+        public DetalleDao()
+        {
+            helper = new DaoHelper();
+        }
+
         public bool DeleteByID(int id)
         {
             List<Parametro> p = new List<Parametro>();
