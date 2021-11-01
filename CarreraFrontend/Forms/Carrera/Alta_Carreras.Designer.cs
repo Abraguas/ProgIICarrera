@@ -30,14 +30,14 @@ namespace CarreraFrontend.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alta_Carreras));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCarreraNro = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nudAñosCursado = new System.Windows.Forms.NumericUpDown();
+            this.nudCuatrimestre = new System.Windows.Forms.NumericUpDown();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +54,8 @@ namespace CarreraFrontend.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,25 +108,25 @@ namespace CarreraFrontend.Forms
             this.label4.TabIndex = 3;
             this.label4.Text = "Cuatrimestre";
             // 
-            // numericUpDown1
+            // nudAñosCursado
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(169, 64);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 23);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nudAñosCursado.Location = new System.Drawing.Point(169, 64);
+            this.nudAñosCursado.Name = "nudAñosCursado";
+            this.nudAñosCursado.Size = new System.Drawing.Size(100, 23);
+            this.nudAñosCursado.TabIndex = 5;
+            this.nudAñosCursado.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // numericUpDown2
+            // nudCuatrimestre
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(169, 95);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 23);
-            this.numericUpDown2.TabIndex = 6;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.nudCuatrimestre.Location = new System.Drawing.Point(169, 95);
+            this.nudCuatrimestre.Name = "nudCuatrimestre";
+            this.nudCuatrimestre.Size = new System.Drawing.Size(100, 23);
+            this.nudCuatrimestre.TabIndex = 6;
+            this.nudCuatrimestre.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -140,14 +140,14 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAsignaturas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(136)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(136)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
@@ -160,11 +160,11 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.ReadOnly = true;
             this.dgvAsignaturas.RowHeadersWidth = 47;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvAsignaturas.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvAsignaturas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAsignaturas.RowTemplate.Height = 25;
             this.dgvAsignaturas.Size = new System.Drawing.Size(597, 218);
             this.dgvAsignaturas.TabIndex = 8;
@@ -290,8 +290,8 @@ namespace CarreraFrontend.Forms
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtNom_Carrera);
             this.panel2.Controls.Add(this.dgvAsignaturas);
-            this.panel2.Controls.Add(this.numericUpDown2);
-            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.nudCuatrimestre);
+            this.panel2.Controls.Add(this.nudAñosCursado);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -320,8 +320,8 @@ namespace CarreraFrontend.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Alta_Carreras";
             this.Text = "Nueva Carrera";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -338,8 +338,8 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudAñosCursado;
+        private System.Windows.Forms.NumericUpDown nudCuatrimestre;
         private System.Windows.Forms.DataGridView dgvAsignaturas;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
