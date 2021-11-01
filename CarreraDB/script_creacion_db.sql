@@ -6,19 +6,19 @@ go
 
 create table carreras
 (
-    id_carrera int identity(1,1),
+    id_carrera int,
     nombre varchar(50),
     titulo varchar(50)
     constraint pk_carrera primary key (id_carrera)
 )
 create table asignaturas 
 (
-    id_asignatura int identity(1,1),
+    id_asignatura int,
     nombre varchar(50)
     constraint pk_asignaturas primary key (id_asignatura)
 )
 create table detalles_carrera (
-    id_detalle int identity(1,1),
+    id_detalle int,
     id_carrera int,
     anio_cursado tinyint,
     cuatrimestre tinyint,
@@ -32,30 +32,33 @@ create table detalles_carrera (
 go
 
 create procedure insertar_carrera
+@id int,
 @nombre varchar(50),
 @titulo varchar(50)
 as
 begin 
-    insert into carreras values(@nombre,@titulo)
+    insert into carreras values(@id,@nombre,@titulo)
 end 
 go
 
 create procedure insertar_detalle
+@id int,
 @id_carrera int,
 @anio int,
 @cuatrimestre int,
 @id_materia int
 as
 begin 
-    insert into detalles_carrera values(@id_carrera,@anio,@cuatrimestre,@id_materia)
+    insert into detalles_carrera values(@id,@id_carrera,@anio,@cuatrimestre,@id_materia)
 end 
 go
 
 create procedure insertar_asignatura
+@id int,
 @nombre varchar (50)
 as
 begin
-	insert into asignaturas values (@nombre)
+	insert into asignaturas values (@id,@nombre)
 end
 go
 
