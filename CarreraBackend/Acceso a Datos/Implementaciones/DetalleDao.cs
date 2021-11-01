@@ -34,9 +34,9 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
         {
             List<Parametro> p = new List<Parametro>();
             p.Add(new Parametro("@id_carrera", Convert.ToString(id_carrera)));
-            p.Add(new Parametro("@anio_cursado", Convert.ToString(detalle.AnioCursado)));
+            p.Add(new Parametro("@anio", Convert.ToString(detalle.AnioCursado)));
             p.Add(new Parametro("@cuatrimestre", Convert.ToString(detalle.Cuatrimestre)));
-            p.Add(new Parametro("@id_materia", Convert.ToString(id_carrera)));
+            p.Add(new Parametro("@id_materia", Convert.ToString(detalle.Materia.Id)));
             return helper.EjecutarSpEntrada("insertar_detalle", p);
         }
     }
