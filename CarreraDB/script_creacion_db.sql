@@ -143,3 +143,10 @@ begin
     where id_asignatura = @id
 end 
 go
+
+create procedure consultar_carrera
+as
+begin
+	select * from carreras
+end
+go
