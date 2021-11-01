@@ -29,19 +29,20 @@ namespace CarreraFrontend.Forms.Asignatura
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarAsignatura));
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar_Asig = new System.Windows.Forms.Button();
             this.btnEditar_Asig = new System.Windows.Forms.Button();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvConsultar_Asignatura = new System.Windows.Forms.DataGridView();
+            this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cuatrimestre_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.cboBuscarAsignatura = new System.Windows.Forms.ComboBox();
             this.chkBaja = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsultar_Asig = new System.Windows.Forms.Button();
-            this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cuatrimestre_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Asignatura)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -49,37 +50,47 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSalir.Location = new System.Drawing.Point(543, 324);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(88, 27);
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "S&alir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             // 
             // btnEliminar_Asig
             // 
-            this.btnEliminar_Asig.Location = new System.Drawing.Point(163, 324);
+            this.btnEliminar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar_Asig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminar_Asig.Location = new System.Drawing.Point(119, 324);
             this.btnEliminar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar_Asig.Name = "btnEliminar_Asig";
             this.btnEliminar_Asig.Size = new System.Drawing.Size(88, 27);
             this.btnEliminar_Asig.TabIndex = 13;
             this.btnEliminar_Asig.Text = "Eliminar";
-            this.btnEliminar_Asig.UseVisualStyleBackColor = true;
+            this.btnEliminar_Asig.UseVisualStyleBackColor = false;
             // 
             // btnEditar_Asig
             // 
-            this.btnEditar_Asig.Location = new System.Drawing.Point(53, 324);
+            this.btnEditar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEditar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar_Asig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEditar_Asig.Location = new System.Drawing.Point(13, 324);
             this.btnEditar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditar_Asig.Name = "btnEditar_Asig";
             this.btnEditar_Asig.Size = new System.Drawing.Size(88, 27);
             this.btnEditar_Asig.TabIndex = 12;
             this.btnEditar_Asig.Text = "Editar";
-            this.btnEditar_Asig.UseVisualStyleBackColor = true;
+            this.btnEditar_Asig.UseVisualStyleBackColor = false;
             // 
             // gbResultados
             // 
             this.gbResultados.Controls.Add(this.dgvConsultar_Asignatura);
+            this.gbResultados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbResultados.Location = new System.Drawing.Point(13, 139);
             this.gbResultados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbResultados.Name = "gbResultados";
@@ -105,12 +116,34 @@ namespace CarreraFrontend.Forms.Asignatura
             this.dgvConsultar_Asignatura.Size = new System.Drawing.Size(603, 150);
             this.dgvConsultar_Asignatura.TabIndex = 0;
             // 
+            // col_Asignatura
+            // 
+            this.col_Asignatura.HeaderText = "Asignatura";
+            this.col_Asignatura.Name = "col_Asignatura";
+            this.col_Asignatura.ReadOnly = true;
+            this.col_Asignatura.Width = 200;
+            // 
+            // col_Carrera
+            // 
+            this.col_Carrera.HeaderText = "Carrera";
+            this.col_Carrera.Name = "col_Carrera";
+            this.col_Carrera.ReadOnly = true;
+            this.col_Carrera.Width = 200;
+            // 
+            // col_cuatrimestre_num
+            // 
+            this.col_cuatrimestre_num.HeaderText = "Numero de Cuatrimestre";
+            this.col_cuatrimestre_num.Name = "col_cuatrimestre_num";
+            this.col_cuatrimestre_num.ReadOnly = true;
+            this.col_cuatrimestre_num.Width = 200;
+            // 
             // gbFiltros
             // 
             this.gbFiltros.Controls.Add(this.cboBuscarAsignatura);
             this.gbFiltros.Controls.Add(this.chkBaja);
             this.gbFiltros.Controls.Add(this.label3);
             this.gbFiltros.Controls.Add(this.btnConsultar_Asig);
+            this.gbFiltros.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbFiltros.Location = new System.Drawing.Point(13, 12);
             this.gbFiltros.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbFiltros.Name = "gbFiltros";
@@ -151,45 +184,28 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             // btnConsultar_Asig
             // 
-            this.btnConsultar_Asig.Location = new System.Drawing.Point(348, 29);
+            this.btnConsultar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConsultar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar_Asig.Location = new System.Drawing.Point(339, 29);
             this.btnConsultar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultar_Asig.Name = "btnConsultar_Asig";
             this.btnConsultar_Asig.Size = new System.Drawing.Size(88, 27);
             this.btnConsultar_Asig.TabIndex = 0;
             this.btnConsultar_Asig.Text = "Consultar";
-            this.btnConsultar_Asig.UseVisualStyleBackColor = true;
-            // 
-            // col_Asignatura
-            // 
-            this.col_Asignatura.HeaderText = "Asignatura";
-            this.col_Asignatura.Name = "col_Asignatura";
-            this.col_Asignatura.ReadOnly = true;
-            this.col_Asignatura.Width = 200;
-            // 
-            // col_Carrera
-            // 
-            this.col_Carrera.HeaderText = "Carrera";
-            this.col_Carrera.Name = "col_Carrera";
-            this.col_Carrera.ReadOnly = true;
-            this.col_Carrera.Width = 200;
-            // 
-            // col_cuatrimestre_num
-            // 
-            this.col_cuatrimestre_num.HeaderText = "Numero de Cuatrimestre";
-            this.col_cuatrimestre_num.Name = "col_cuatrimestre_num";
-            this.col_cuatrimestre_num.ReadOnly = true;
-            this.col_cuatrimestre_num.Width = 200;
+            this.btnConsultar_Asig.UseVisualStyleBackColor = false;
             // 
             // ConsultarAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 359);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(72)))), ((int)(((byte)(149)))));
+            this.ClientSize = new System.Drawing.Size(646, 359);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar_Asig);
             this.Controls.Add(this.btnEditar_Asig);
             this.Controls.Add(this.gbResultados);
             this.Controls.Add(this.gbFiltros);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarAsignatura";
             this.Text = "Consultar Asignatura";
             this.gbResultados.ResumeLayout(false);
