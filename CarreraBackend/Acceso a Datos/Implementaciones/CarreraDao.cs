@@ -14,7 +14,7 @@ namespace CarreraBackend.Acceso_a_Datos
 
         public CarreraDao()
         {
-            helper = DaoHelper.ObtenerInstancia();
+            helper = new DaoHelper();
         }
 
         public bool Save(Carrera carrera)

@@ -10,24 +10,16 @@ namespace CarreraBackend.Acceso_a_Datos
 {
     class DaoHelper
     {
-        private static DaoHelper instancia;
         private string cadenaConexion;
         private SqlConnection conexion;
         private SqlCommand comando;
 
-        private DaoHelper()
+        public DaoHelper()
         {
             cadenaConexion = @"Data Source=localhost;Initial Catalog=db_carrera;Integrated Security=True";
             conexion = new SqlConnection(cadenaConexion);
         }
-        public static DaoHelper ObtenerInstancia()
-        {
-            if (instancia == null)
-            {
-                instancia = new DaoHelper();
-            }
-            return instancia;
-        }
+
 
         public DataTable ConsultarDB(string nombreSP)
         {

@@ -11,7 +11,13 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
 {
     class AsignaturaDao : IAsignaturaDao
     {
-        private DaoHelper helper = DaoHelper.ObtenerInstancia();
+        private DaoHelper helper;
+
+        public AsignaturaDao()
+        {
+            helper = new DaoHelper();
+        }
+
         public bool Save(Asignatura asignatura)
         {
             List<Parametro> p = new List<Parametro>();
@@ -24,7 +30,7 @@ namespace CarreraBackend.Acceso_a_Datos.Implementaciones
             List<Asignatura> asignaturas = new List<Asignatura>();
             foreach(DataRow fila in resultado.Rows)
             {
-                asignaturas.Add(new Asignatura(Convert.ToInt32("id_asignatura"),Convert.ToString("nombre")));
+                asignaturas.Add(new Asignatura(Convert.ToInt32(fila["id_asignatura"]),Convert.ToString(fila["nombre"])));
             }
             return asignaturas;
         }
