@@ -21,7 +21,7 @@ namespace CarreraBackend.Acceso_a_Datos
         {
             List<List<Parametro>> paramDetalles = new List<List<Parametro>>();
             List<Parametro> paramMaestro = new List<Parametro>();
-
+            paramMaestro.Add(new Parametro("@id", Convert.ToString(carrera.Id)));
             paramMaestro.Add(new Parametro("@nombre", carrera.Nombre));
             paramMaestro.Add(new Parametro("@titulo", carrera.Titulo));
 
