@@ -41,14 +41,20 @@ namespace CarreraWebAPI.Controllers
                 return Ok("No se pudo grabar la asignatura!");
         }
 
-        public ActionResult PutAsignatura(Asignatura oAsignatura)
-        {
-            if (!app_asig.Actualizar(oAsignatura))
-            {
-                return BadRequest("La carrera no existe");
-            }
-            return Ok();
-        }
+
+        //[HttpPost]
+        //public IActionResult ActualizarAsignatura(Asignatura oAsignatura)
+        //{
+        //    if (oAsignatura == null)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    if (app_asig.Actualizar(oAsignatura))
+        //        return Ok("Ok");
+        //    else
+        //        return Ok("No se pudo grabar la asignatura!");
+        //}
 
         [HttpDelete("{id}")]
         public IActionResult DeleteAsignatura(int id)

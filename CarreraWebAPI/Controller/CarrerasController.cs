@@ -42,15 +42,19 @@ namespace CarreraWebAPI.Controllers
                 return Ok("No se pudo grabar la carrera!");
         }
 
-        public ActionResult PutCarrera(Carrera oCarrera)
-        {
-            if (!app_carre.Actualizar(oCarrera))
-            {
-                return BadRequest("La carrera no existe");
-            }
+        //[HttpPost]
+        //public IActionResult ActualizarCarrera(Carrera oCarrera)
+        //{
+        //    if (oCarrera == null)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            return Ok();
-        }
+        //    if (app_carre.Actualizar(oCarrera))
+        //        return Ok("Ok");
+        //    else
+        //        return Ok("No se pudo grabar la carrera!");
+        //}
 
         [HttpDelete("{id}")]
         public IActionResult DeleteCarrera(int id)
