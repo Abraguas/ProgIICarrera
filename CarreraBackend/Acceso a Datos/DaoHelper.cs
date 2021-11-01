@@ -60,29 +60,29 @@ namespace CarreraBackend.Acceso_a_Datos
             }
             return tabla;
         }
-        //public object EjecutarSPSalida(string sp, string nomParametro) [--Borrar si no la usamos--]
-        //{
-        //    comando = new SqlCommand();
-        //    comando.CommandType = CommandType.StoredProcedure;
-        //    comando.Connection = conexion;
-        //    comando.CommandText = sp;
-        //    SqlParameter param = new SqlParameter();
-        //    param.ParameterName = nomParametro;
-        //    param.Direction = ParameterDirection.Output;
-        //    param.SqlDbType = SqlDbType.Int;
-        //    comando.Parameters.Add(param);
-        //    try
-        //    {
-        //        conexion.Open();
-        //        comando.ExecuteReader();
-        //        conexion.Close();
-        //    }
-        //    catch (SqlException e)
-        //    {
-        //        throw e;
-        //    }
-        //    return param.Value;
-        //}
+        public object EjecutarSPSalida(string sp, string nomParametro)
+        {
+            comando = new SqlCommand();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Connection = conexion;
+            comando.CommandText = sp;
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = nomParametro;
+            param.Direction = ParameterDirection.Output;
+            param.SqlDbType = SqlDbType.Int;
+            comando.Parameters.Add(param);
+            try
+            {
+                conexion.Open();
+                comando.ExecuteReader();
+                conexion.Close();
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            return param.Value;
+        }
         public bool EjecutarSpEntrada(string nombreSP, List<Parametro> parametros) 
         {
             bool flag = true;
