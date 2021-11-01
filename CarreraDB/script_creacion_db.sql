@@ -97,6 +97,16 @@ begin
 end
 go 
 
+create procedure verificar_detalle_id
+@id_detalle int
+as 
+begin 
+    select count(*)
+    from detalles_carrera
+    where id_detalle = @id_detalle
+end
+go 
+
 create procedure borrar_carrera_id
 @id int 
 as 
@@ -117,6 +127,15 @@ begin
     where id_materia = @id 
     delete asignaturas
     where id_asignatura = @id 
+end 
+go
+
+create procedure borrar_detalle_id
+@id_detalle int 
+as 
+begin 
+    delete detalles_carrera
+    where id_detalle = @id_detalle 
 end 
 go
 
