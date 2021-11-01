@@ -101,7 +101,7 @@ namespace CarreraBackend.Acceso_a_Datos
             }
             catch (SqlException e)
             {
-                //throw e;
+                throw e;
                 flag = false;
             }
             finally
