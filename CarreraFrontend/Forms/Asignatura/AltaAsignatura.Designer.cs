@@ -48,9 +48,9 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btn_CancelarAsig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_CancelarAsig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelarAsig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_CancelarAsig.Location = new System.Drawing.Point(193, 114);
+            this.btn_CancelarAsig.Location = new System.Drawing.Point(247, 133);
             this.btn_CancelarAsig.Name = "btn_CancelarAsig";
-            this.btn_CancelarAsig.Size = new System.Drawing.Size(75, 23);
+            this.btn_CancelarAsig.Size = new System.Drawing.Size(94, 33);
             this.btn_CancelarAsig.TabIndex = 21;
             this.btn_CancelarAsig.Text = "Cancelar";
             this.btn_CancelarAsig.UseVisualStyleBackColor = false;
@@ -60,16 +60,16 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnAceptarAsig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAceptarAsig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptarAsig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAceptarAsig.Location = new System.Drawing.Point(90, 114);
+            this.btnAceptarAsig.Location = new System.Drawing.Point(132, 133);
             this.btnAceptarAsig.Name = "btnAceptarAsig";
-            this.btnAceptarAsig.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarAsig.Size = new System.Drawing.Size(97, 33);
             this.btnAceptarAsig.TabIndex = 20;
             this.btnAceptarAsig.Text = "Aceptar";
             this.btnAceptarAsig.UseVisualStyleBackColor = false;
             // 
             // txtNom_Asignatura
             // 
-            this.txtNom_Asignatura.Location = new System.Drawing.Point(193, 34);
+            this.txtNom_Asignatura.Location = new System.Drawing.Point(253, 66);
             this.txtNom_Asignatura.Name = "txtNom_Asignatura";
             this.txtNom_Asignatura.Size = new System.Drawing.Size(121, 23);
             this.txtNom_Asignatura.TabIndex = 19;
@@ -77,23 +77,24 @@ namespace CarreraFrontend.Forms.Asignatura
             // lblNom_Asignatura
             // 
             this.lblNom_Asignatura.AutoSize = true;
+            this.lblNom_Asignatura.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNom_Asignatura.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNom_Asignatura.Location = new System.Drawing.Point(36, 37);
+            this.lblNom_Asignatura.Location = new System.Drawing.Point(85, 67);
             this.lblNom_Asignatura.Name = "lblNom_Asignatura";
-            this.lblNom_Asignatura.Size = new System.Drawing.Size(139, 15);
+            this.lblNom_Asignatura.Size = new System.Drawing.Size(162, 19);
             this.lblNom_Asignatura.TabIndex = 18;
             this.lblNom_Asignatura.Text = "Nombre de la Asignatura";
             // 
             // lblAsignaturaNro
             // 
             this.lblAsignaturaNro.AutoSize = true;
-            this.lblAsignaturaNro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAsignaturaNro.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAsignaturaNro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblAsignaturaNro.Image = ((System.Drawing.Image)(resources.GetObject("lblAsignaturaNro.Image")));
             this.lblAsignaturaNro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAsignaturaNro.Location = new System.Drawing.Point(11, 5);
+            this.lblAsignaturaNro.Location = new System.Drawing.Point(14, 9);
             this.lblAsignaturaNro.Name = "lblAsignaturaNro";
-            this.lblAsignaturaNro.Size = new System.Drawing.Size(194, 25);
+            this.lblAsignaturaNro.Size = new System.Drawing.Size(225, 30);
             this.lblAsignaturaNro.TabIndex = 17;
             this.lblAsignaturaNro.Text = "       Asignatura Nro: ";
             // 
@@ -103,7 +104,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.panel1.Controls.Add(this.lblAsignaturaNro);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 35);
+            this.panel1.Size = new System.Drawing.Size(485, 48);
             this.panel1.TabIndex = 22;
             // 
             // panel2
@@ -115,9 +116,9 @@ namespace CarreraFrontend.Forms.Asignatura
             this.panel2.Controls.Add(this.txtNom_Asignatura);
             this.panel2.Controls.Add(this.lblNom_Asignatura);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Location = new System.Drawing.Point(-2, 35);
+            this.panel2.Location = new System.Drawing.Point(-2, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(375, 277);
+            this.panel2.Size = new System.Drawing.Size(485, 399);
             this.panel2.TabIndex = 23;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -125,9 +126,9 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(66, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 268);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(382, 118);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
@@ -135,10 +136,12 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 307);
+            this.ClientSize = new System.Drawing.Size(483, 444);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AltaAsignatura";
             this.Text = "AltaAsignatura";
             this.panel1.ResumeLayout(false);

@@ -33,112 +33,143 @@ namespace CarreraFrontend.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCarreraNro = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudAñosCursado = new System.Windows.Forms.NumericUpDown();
-            this.nudCuatrimestre = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboMateria = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboTitulo = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNom_Carrera = new System.Windows.Forms.TextBox();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_quitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtNom_Carrera = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboTitulo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboMateria = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
+            this.nudCuatrimestre = new System.Windows.Forms.NumericUpDown();
+            this.nudAñosCursado = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCarreraNro
             // 
             this.lblCarreraNro.AutoSize = true;
-            this.lblCarreraNro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCarreraNro.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCarreraNro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblCarreraNro.Image = ((System.Drawing.Image)(resources.GetObject("lblCarreraNro.Image")));
             this.lblCarreraNro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCarreraNro.Location = new System.Drawing.Point(12, 12);
+            this.lblCarreraNro.Location = new System.Drawing.Point(16, 17);
             this.lblCarreraNro.Name = "lblCarreraNro";
-            this.lblCarreraNro.Size = new System.Drawing.Size(163, 25);
+            this.lblCarreraNro.Size = new System.Drawing.Size(191, 32);
             this.lblCarreraNro.TabIndex = 0;
-            this.lblCarreraNro.Text = "       Carrera Nro: \r\n";
+            this.lblCarreraNro.Text = "    Carrera Nro: \r\n";
             this.lblCarreraNro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCarreraNro.Click += new System.EventHandler(this.lblCarreraNro_Click);
             // 
-            // label2
+            // panel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(43, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre de la Carrera";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.lblCarreraNro);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(716, 66);
+            this.panel1.TabIndex = 16;
             // 
-            // label3
+            // pictureBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(66, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Años de Cursado";
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(342, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(342, 141);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // cboMateria
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(88, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Cuatrimestre";
+            this.cboMateria.FormattingEnabled = true;
+            this.cboMateria.Location = new System.Drawing.Point(168, 219);
+            this.cboMateria.Name = "cboMateria";
+            this.cboMateria.Size = new System.Drawing.Size(141, 23);
+            this.cboMateria.TabIndex = 30;
             // 
-            // nudAñosCursado
+            // label5
             // 
-            this.nudAñosCursado.Location = new System.Drawing.Point(169, 64);
-            this.nudAñosCursado.Name = "nudAñosCursado";
-            this.nudAñosCursado.Size = new System.Drawing.Size(100, 23);
-            this.nudAñosCursado.TabIndex = 5;
-            this.nudAñosCursado.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(106, 221);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 19);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Materia";
             // 
-            // nudCuatrimestre
+            // btnCancelar
             // 
-            this.nudCuatrimestre.Location = new System.Drawing.Point(169, 95);
-            this.nudCuatrimestre.Name = "nudCuatrimestre";
-            this.nudCuatrimestre.Size = new System.Drawing.Size(100, 23);
-            this.nudCuatrimestre.TabIndex = 6;
-            this.nudCuatrimestre.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelar.Location = new System.Drawing.Point(625, 517);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(82, 26);
+            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // cboTitulo
+            // 
+            this.cboTitulo.FormattingEnabled = true;
+            this.cboTitulo.Location = new System.Drawing.Point(168, 134);
+            this.cboTitulo.Name = "cboTitulo";
+            this.cboTitulo.Size = new System.Drawing.Size(141, 23);
+            this.cboTitulo.TabIndex = 28;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAceptar.Location = new System.Drawing.Point(521, 517);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(82, 26);
+            this.btnAceptar.TabIndex = 24;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(119, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 19);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Titulo";
+            // 
+            // txtNom_Carrera
+            // 
+            this.txtNom_Carrera.Location = new System.Drawing.Point(168, 107);
+            this.txtNom_Carrera.Name = "txtNom_Carrera";
+            this.txtNom_Carrera.Size = new System.Drawing.Size(141, 23);
+            this.txtNom_Carrera.TabIndex = 26;
             // 
             // dgvAsignaturas
             // 
             this.dgvAsignaturas.AllowUserToAddRows = false;
             this.dgvAsignaturas.AllowUserToDeleteRows = false;
+            this.dgvAsignaturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAsignaturas.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAsignaturas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GrayText;
@@ -156,7 +187,7 @@ namespace CarreraFrontend.Forms
             this.col_año,
             this.btn_quitar});
             this.dgvAsignaturas.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(17, 158);
+            this.dgvAsignaturas.Location = new System.Drawing.Point(12, 278);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.ReadOnly = true;
             this.dgvAsignaturas.RowHeadersWidth = 47;
@@ -166,8 +197,8 @@ namespace CarreraFrontend.Forms
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dgvAsignaturas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAsignaturas.RowTemplate.Height = 25;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(597, 218);
-            this.dgvAsignaturas.TabIndex = 8;
+            this.dgvAsignaturas.Size = new System.Drawing.Size(696, 218);
+            this.dgvAsignaturas.TabIndex = 23;
             // 
             // col_id
             // 
@@ -187,14 +218,12 @@ namespace CarreraFrontend.Forms
             this.col_cuatrimestre.HeaderText = "Numero de Cuatrimestre";
             this.col_cuatrimestre.Name = "col_cuatrimestre";
             this.col_cuatrimestre.ReadOnly = true;
-            this.col_cuatrimestre.Width = 200;
             // 
             // col_año
             // 
             this.col_año.HeaderText = "Año de cursado";
             this.col_año.Name = "col_año";
             this.col_año.ReadOnly = true;
-            this.col_año.Width = 150;
             // 
             // btn_quitar
             // 
@@ -202,160 +231,123 @@ namespace CarreraFrontend.Forms
             this.btn_quitar.Name = "btn_quitar";
             this.btn_quitar.ReadOnly = true;
             // 
-            // btnAceptar
+            // nudCuatrimestre
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAceptar.Location = new System.Drawing.Point(430, 385);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(82, 26);
-            this.btnAceptar.TabIndex = 9;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.nudCuatrimestre.Location = new System.Drawing.Point(168, 191);
+            this.nudCuatrimestre.Name = "nudCuatrimestre";
+            this.nudCuatrimestre.Size = new System.Drawing.Size(141, 23);
+            this.nudCuatrimestre.TabIndex = 22;
+            this.nudCuatrimestre.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // btnCancelar
+            // nudAñosCursado
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(532, 385);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(82, 26);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.nudAñosCursado.Location = new System.Drawing.Point(168, 162);
+            this.nudAñosCursado.Name = "nudAñosCursado";
+            this.nudAñosCursado.Size = new System.Drawing.Size(141, 23);
+            this.nudAñosCursado.TabIndex = 21;
+            this.nudAñosCursado.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // txtNom_Carrera
+            // label4
             // 
-            this.txtNom_Carrera.Location = new System.Drawing.Point(169, 7);
-            this.txtNom_Carrera.Name = "txtNom_Carrera";
-            this.txtNom_Carrera.Size = new System.Drawing.Size(100, 23);
-            this.txtNom_Carrera.TabIndex = 11;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(74, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 19);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Cuatrimestre";
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(126, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Titulo";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(48, 163);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 19);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Años de Cursado";
             // 
-            // cboTitulo
+            // label2
             // 
-            this.cboTitulo.FormattingEnabled = true;
-            this.cboTitulo.Location = new System.Drawing.Point(169, 35);
-            this.cboTitulo.Name = "cboTitulo";
-            this.cboTitulo.Size = new System.Drawing.Size(100, 23);
-            this.cboTitulo.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(116, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Materia";
-            // 
-            // cboMateria
-            // 
-            this.cboMateria.FormattingEnabled = true;
-            this.cboMateria.Location = new System.Drawing.Point(169, 126);
-            this.cboMateria.Name = "cboMateria";
-            this.cboMateria.Size = new System.Drawing.Size(100, 23);
-            this.cboMateria.TabIndex = 15;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.lblCarreraNro);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 49);
-            this.panel1.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(70)))), ((int)(((byte)(101)))));
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.cboMateria);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.cboTitulo);
-            this.panel2.Controls.Add(this.btnAceptar);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtNom_Carrera);
-            this.panel2.Controls.Add(this.dgvAsignaturas);
-            this.panel2.Controls.Add(this.nudCuatrimestre);
-            this.panel2.Controls.Add(this.nudAñosCursado);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(0, 48);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(629, 419);
-            this.panel2.TabIndex = 17;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(322, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 92);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(21, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 19);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Nombre de la Carrera";
             // 
             // Alta_Carreras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 467);
-            this.Controls.Add(this.panel2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(70)))), ((int)(((byte)(101)))));
+            this.ClientSize = new System.Drawing.Size(713, 556);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cboMateria);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.cboTitulo);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNom_Carrera);
+            this.Controls.Add(this.dgvAsignaturas);
+            this.Controls.Add(this.nudCuatrimestre);
+            this.Controls.Add(this.nudAñosCursado);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Alta_Carreras";
             this.Text = "Nueva Carrera";
-            ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
+            this.Load += new System.EventHandler(this.Alta_Carreras_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblCarreraNro;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown nudAñosCursado;
-        private System.Windows.Forms.NumericUpDown nudCuatrimestre;
-        private System.Windows.Forms.DataGridView dgvAsignaturas;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtNom_Carrera;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboTitulo;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cboMateria;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cboTitulo;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNom_Carrera;
+        private System.Windows.Forms.DataGridView dgvAsignaturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Asignatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_año;
         private System.Windows.Forms.DataGridViewButtonColumn btn_quitar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown nudCuatrimestre;
+        private System.Windows.Forms.NumericUpDown nudAñosCursado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

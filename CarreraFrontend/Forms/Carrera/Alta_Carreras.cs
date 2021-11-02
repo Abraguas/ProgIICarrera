@@ -50,5 +50,10 @@ namespace CarreraFrontend.Forms
         {
 
         }
+
+        private void Alta_Carreras_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -53,7 +53,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(543, 324);
+            this.btnSalir.Location = new System.Drawing.Point(670, 406);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(88, 27);
@@ -66,7 +66,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnEliminar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar_Asig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminar_Asig.Location = new System.Drawing.Point(119, 324);
+            this.btnEliminar_Asig.Location = new System.Drawing.Point(119, 406);
             this.btnEliminar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar_Asig.Name = "btnEliminar_Asig";
             this.btnEliminar_Asig.Size = new System.Drawing.Size(88, 27);
@@ -79,7 +79,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnEditar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar_Asig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar_Asig.Location = new System.Drawing.Point(13, 324);
+            this.btnEditar_Asig.Location = new System.Drawing.Point(13, 406);
             this.btnEditar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditar_Asig.Name = "btnEditar_Asig";
             this.btnEditar_Asig.Size = new System.Drawing.Size(88, 27);
@@ -90,12 +90,13 @@ namespace CarreraFrontend.Forms.Asignatura
             // gbResultados
             // 
             this.gbResultados.Controls.Add(this.dgvConsultar_Asignatura);
+            this.gbResultados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gbResultados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbResultados.Location = new System.Drawing.Point(13, 139);
+            this.gbResultados.Location = new System.Drawing.Point(13, 175);
             this.gbResultados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbResultados.Size = new System.Drawing.Size(618, 179);
+            this.gbResultados.Size = new System.Drawing.Size(745, 223);
             this.gbResultados.TabIndex = 11;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
@@ -104,6 +105,7 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             this.dgvConsultar_Asignatura.AllowUserToAddRows = false;
             this.dgvConsultar_Asignatura.AllowUserToDeleteRows = false;
+            this.dgvConsultar_Asignatura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultar_Asignatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultar_Asignatura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_Asignatura,
@@ -113,7 +115,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.dgvConsultar_Asignatura.Name = "dgvConsultar_Asignatura";
             this.dgvConsultar_Asignatura.ReadOnly = true;
             this.dgvConsultar_Asignatura.RowTemplate.Height = 25;
-            this.dgvConsultar_Asignatura.Size = new System.Drawing.Size(603, 150);
+            this.dgvConsultar_Asignatura.Size = new System.Drawing.Size(730, 191);
             this.dgvConsultar_Asignatura.TabIndex = 0;
             // 
             // col_Asignatura
@@ -121,21 +123,18 @@ namespace CarreraFrontend.Forms.Asignatura
             this.col_Asignatura.HeaderText = "Asignatura";
             this.col_Asignatura.Name = "col_Asignatura";
             this.col_Asignatura.ReadOnly = true;
-            this.col_Asignatura.Width = 200;
             // 
             // col_Carrera
             // 
             this.col_Carrera.HeaderText = "Carrera";
             this.col_Carrera.Name = "col_Carrera";
             this.col_Carrera.ReadOnly = true;
-            this.col_Carrera.Width = 200;
             // 
             // col_cuatrimestre_num
             // 
             this.col_cuatrimestre_num.HeaderText = "Numero de Cuatrimestre";
             this.col_cuatrimestre_num.Name = "col_cuatrimestre_num";
             this.col_cuatrimestre_num.ReadOnly = true;
-            this.col_cuatrimestre_num.Width = 200;
             // 
             // gbFiltros
             // 
@@ -143,8 +142,9 @@ namespace CarreraFrontend.Forms.Asignatura
             this.gbFiltros.Controls.Add(this.chkBaja);
             this.gbFiltros.Controls.Add(this.label3);
             this.gbFiltros.Controls.Add(this.btnConsultar_Asig);
+            this.gbFiltros.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gbFiltros.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbFiltros.Location = new System.Drawing.Point(13, 12);
+            this.gbFiltros.Location = new System.Drawing.Point(13, 26);
             this.gbFiltros.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -156,18 +156,18 @@ namespace CarreraFrontend.Forms.Asignatura
             // cboBuscarAsignatura
             // 
             this.cboBuscarAsignatura.FormattingEnabled = true;
-            this.cboBuscarAsignatura.Location = new System.Drawing.Point(94, 29);
+            this.cboBuscarAsignatura.Location = new System.Drawing.Point(98, 38);
             this.cboBuscarAsignatura.Name = "cboBuscarAsignatura";
-            this.cboBuscarAsignatura.Size = new System.Drawing.Size(195, 23);
+            this.cboBuscarAsignatura.Size = new System.Drawing.Size(195, 25);
             this.cboBuscarAsignatura.TabIndex = 8;
             // 
             // chkBaja
             // 
             this.chkBaja.AutoSize = true;
-            this.chkBaja.Location = new System.Drawing.Point(20, 58);
+            this.chkBaja.Location = new System.Drawing.Point(20, 76);
             this.chkBaja.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkBaja.Name = "chkBaja";
-            this.chkBaja.Size = new System.Drawing.Size(155, 19);
+            this.chkBaja.Size = new System.Drawing.Size(177, 23);
             this.chkBaja.TabIndex = 7;
             this.chkBaja.Text = "Incluir con datos de baja";
             this.chkBaja.UseVisualStyleBackColor = true;
@@ -175,10 +175,10 @@ namespace CarreraFrontend.Forms.Asignatura
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 32);
+            this.label3.Location = new System.Drawing.Point(19, 41);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Asignatura:";
             // 
@@ -186,7 +186,7 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             this.btnConsultar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnConsultar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar_Asig.Location = new System.Drawing.Point(339, 29);
+            this.btnConsultar_Asig.Location = new System.Drawing.Point(328, 36);
             this.btnConsultar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultar_Asig.Name = "btnConsultar_Asig";
             this.btnConsultar_Asig.Size = new System.Drawing.Size(88, 27);
@@ -199,13 +199,15 @@ namespace CarreraFrontend.Forms.Asignatura
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(72)))), ((int)(((byte)(149)))));
-            this.ClientSize = new System.Drawing.Size(646, 359);
+            this.ClientSize = new System.Drawing.Size(771, 444);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar_Asig);
             this.Controls.Add(this.btnEditar_Asig);
             this.Controls.Add(this.gbResultados);
             this.Controls.Add(this.gbFiltros);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConsultarAsignatura";
             this.Text = "Consultar Asignatura";
             this.Load += new System.EventHandler(this.ConsultarAsignatura_Load);

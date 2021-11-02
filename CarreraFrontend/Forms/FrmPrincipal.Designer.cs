@@ -58,7 +58,7 @@ namespace CarreraFrontend.Forms
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip2.Size = new System.Drawing.Size(638, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(765, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -139,17 +139,19 @@ namespace CarreraFrontend.Forms
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 343);
+            this.panel1.Size = new System.Drawing.Size(765, 464);
             this.panel1.TabIndex = 2;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 366);
+            this.ClientSize = new System.Drawing.Size(765, 487);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.Text = "Universidad";
             this.menuStrip2.ResumeLayout(false);
