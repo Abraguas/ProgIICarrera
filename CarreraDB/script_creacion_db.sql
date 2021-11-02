@@ -67,6 +67,15 @@ begin
 end
 go
 
+create procedure consultar_carrera_id
+@id int
+as
+begin
+	select * from carreras
+	where id_carrera = @id
+end
+go
+
 create procedure consultar_detalles_id
 @id int
 as
