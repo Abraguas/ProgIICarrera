@@ -80,13 +80,10 @@ namespace CarreraFrontend.Forms
 
             txtNom_Carrera.Text = oCarrera.Nombre;
             cboTitulo.SelectedItem = oCarrera.Titulo;
-            detalles = oCarrera.Detalles;
 
-
-            foreach (Detal detalle in detalles)
+            foreach (Detal oDetalle in oCarrera.Detalles)
             {
-                dgvAsignaturas.Rows.Add(new object[] { detalle.Materia.Id, detalle.Materia.Nombre, detalle.AnioCursado, detalle.Cuatrimestre });
-
+                dgvAsignaturas.Rows.Add(new string[] { "", oDetalle.Materia.Nombre, oDetalle.AnioCursado.ToString(), oDetalle.Cuatrimestre.ToString() });
             }
         }
 
@@ -103,8 +100,32 @@ namespace CarreraFrontend.Forms
             oDetalle.AnioCursado = (int)nudAñosCursado.Value;
             oDetalle.Cuatrimestre = (int)nudCuatrimestre.Value;
             oCarrera.AgregarDetalle(oDetalle);
-            dgvAsignaturas.Rows.Add(new string[] {"", oDetalle.Materia.Nombre, oDetalle.AnioCursado.ToString(), oDetalle.Cuatrimestre.ToString() });
+            if (modo == Accion.UPDATE)
+            {
+                GrabarDetalle(oDetalle);
+
+            }
+            dgvAsignaturas.Rows.Add(new string[] { "", oDetalle.Materia.Nombre, oDetalle.AnioCursado.ToString(), oDetalle.Cuatrimestre.ToString() });
+
+
+
             
+        }
+
+        private async void GrabarDetalle(Detal oDetalle)
+        {
+            string data = JsonConvert.SerializeObject(oDetalle);
+            string url = "https://localhost:5001/api/Detalles/" + oCarrera.Id;
+
+            if ((await cliente.PostAsync(url, data)) == "Ok")
+            {
+                MessageBox.Show("Asignatura añadida con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un inconveniente al registrar la nueva Asignatura!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private async void btnAceptar_Click(object sender, EventArgs e)
