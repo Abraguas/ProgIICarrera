@@ -41,6 +41,7 @@ namespace CarreraFrontend.Forms
             this.consultarCarrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reportestoolAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace CarreraFrontend.Forms
             this.archivoToolStripMenuItem,
             this.soporteToolStripMenuItem,
             this.carrerasToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.reportestoolAcercaDe});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -73,7 +75,7 @@ namespace CarreraFrontend.Forms
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -143,6 +145,12 @@ namespace CarreraFrontend.Forms
             this.panel1.Size = new System.Drawing.Size(765, 464);
             this.panel1.TabIndex = 2;
             // 
+            // reportestoolAcercaDe
+            // 
+            this.reportestoolAcercaDe.Name = "reportestoolAcercaDe";
+            this.reportestoolAcercaDe.Size = new System.Drawing.Size(71, 20);
+            this.reportestoolAcercaDe.Text = "Acerca de";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -176,5 +184,6 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.ToolStripMenuItem consultarCarrerasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem reportestoolAcercaDe;
     }
 }

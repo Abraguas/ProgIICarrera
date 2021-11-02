@@ -101,6 +101,12 @@ namespace CarreraFrontend.Forms
         //BOTONES
         private async void btnAgregar_Asig_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNom_Carrera.Text))
+            {
+                MessageBox.Show("El campo Nombre de Carrera es obligatorio!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (ExisteProductoEnGrilla(cboMateria.Text))
             {
                 MessageBox.Show("La asignatura ya fue registrada!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -174,7 +180,6 @@ namespace CarreraFrontend.Forms
                 MessageBox.Show("Los campos: Nombre de carrera y Materia son obligatorios!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
 
             oCarrera.Nombre = txtNom_Carrera.Text;
             oCarrera.Titulo = Convert.ToString(cboTitulo.SelectedItem);

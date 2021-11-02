@@ -34,10 +34,7 @@ namespace CarreraFrontend.Forms.Asignatura
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+   
 
         private async void btnAceptarAsig_Click(object sender, EventArgs e)
         {
@@ -61,7 +58,6 @@ namespace CarreraFrontend.Forms.Asignatura
                 await cliente.PutAsync("https://localhost:44307/api/Asignatura", JsonConvert.SerializeObject(asignatura));
                 MessageBox.Show("Se actualizó la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
-
             }
 
         }
@@ -78,7 +74,11 @@ namespace CarreraFrontend.Forms.Asignatura
         {
 
         }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
-  
+        }
+
+
     }
 }
