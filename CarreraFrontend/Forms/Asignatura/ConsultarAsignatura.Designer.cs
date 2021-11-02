@@ -153,7 +153,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(72)))), ((int)(((byte)(149)))));
-            this.ClientSize = new System.Drawing.Size(771, 444);
+            this.ClientSize = new System.Drawing.Size(771, 284);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.gbResultados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -134,7 +134,7 @@ namespace CarreraFrontend.Forms.Carrera
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(70)))), ((int)(((byte)(101)))));
-            this.ClientSize = new System.Drawing.Size(760, 465);
+            this.ClientSize = new System.Drawing.Size(760, 316);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.gbResultados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
