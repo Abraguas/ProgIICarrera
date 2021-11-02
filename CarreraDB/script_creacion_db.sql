@@ -170,3 +170,11 @@ begin
 	select * from carreras
 end
 go
+
+create procedure carrera_proximo_id
+@next int OUTPUT
+as
+begin
+    set @next = (select max(id_carrera)+1  from carreras);
+end
+go
