@@ -32,8 +32,6 @@ namespace CarreraFrontend.Forms.Carrera
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarCarrera));
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEliminar_Carrera = new System.Windows.Forms.Button();
-            this.btnEditar_Carrera = new System.Windows.Forms.Button();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvConsultar_Carrera = new System.Windows.Forms.DataGridView();
             this.col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,33 +56,6 @@ namespace CarreraFrontend.Forms.Carrera
             this.btnSalir.Text = "S&alir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnEliminar_Carrera
-            // 
-            this.btnEliminar_Carrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar_Carrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_Carrera.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminar_Carrera.Location = new System.Drawing.Point(109, 278);
-            this.btnEliminar_Carrera.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnEliminar_Carrera.Name = "btnEliminar_Carrera";
-            this.btnEliminar_Carrera.Size = new System.Drawing.Size(88, 27);
-            this.btnEliminar_Carrera.TabIndex = 8;
-            this.btnEliminar_Carrera.Text = "Eliminar";
-            this.btnEliminar_Carrera.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar_Carrera
-            // 
-            this.btnEditar_Carrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditar_Carrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar_Carrera.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar_Carrera.Location = new System.Drawing.Point(13, 278);
-            this.btnEditar_Carrera.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnEditar_Carrera.Name = "btnEditar_Carrera";
-            this.btnEditar_Carrera.Size = new System.Drawing.Size(88, 27);
-            this.btnEditar_Carrera.TabIndex = 7;
-            this.btnEditar_Carrera.Text = "Editar";
-            this.btnEditar_Carrera.UseVisualStyleBackColor = false;
-            this.btnEditar_Carrera.Click += new System.EventHandler(this.btnEditar_Carrera_Click);
             // 
             // gbResultados
             // 
@@ -165,8 +136,6 @@ namespace CarreraFrontend.Forms.Carrera
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(70)))), ((int)(((byte)(101)))));
             this.ClientSize = new System.Drawing.Size(760, 465);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnEliminar_Carrera);
-            this.Controls.Add(this.btnEditar_Carrera);
             this.Controls.Add(this.gbResultados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -66,5 +66,11 @@ namespace CarreraFrontend.Forms
                 return;
             }
         }
+
+        private void integrantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Acerca_de integrantes = new Acerca_de();
+            integrantes.ShowDialog();
+        }
     }
 }

@@ -40,8 +40,9 @@ namespace CarreraFrontend.Forms
             this.cargarNuevaCarreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCarrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.reportestoolAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.integrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +133,14 @@ namespace CarreraFrontend.Forms
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // reportestoolAcercaDe
+            // 
+            this.reportestoolAcercaDe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.integrantesToolStripMenuItem});
+            this.reportestoolAcercaDe.Name = "reportestoolAcercaDe";
+            this.reportestoolAcercaDe.Size = new System.Drawing.Size(71, 20);
+            this.reportestoolAcercaDe.Text = "Acerca de";
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -145,11 +154,12 @@ namespace CarreraFrontend.Forms
             this.panel1.Size = new System.Drawing.Size(765, 464);
             this.panel1.TabIndex = 2;
             // 
-            // reportestoolAcercaDe
+            // integrantesToolStripMenuItem
             // 
-            this.reportestoolAcercaDe.Name = "reportestoolAcercaDe";
-            this.reportestoolAcercaDe.Size = new System.Drawing.Size(71, 20);
-            this.reportestoolAcercaDe.Text = "Acerca de";
+            this.integrantesToolStripMenuItem.Name = "integrantesToolStripMenuItem";
+            this.integrantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.integrantesToolStripMenuItem.Text = "Integrantes";
+            this.integrantesToolStripMenuItem.Click += new System.EventHandler(this.integrantesToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -185,5 +195,6 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem reportestoolAcercaDe;
+        private System.Windows.Forms.ToolStripMenuItem integrantesToolStripMenuItem;
     }
 }
