@@ -213,6 +213,7 @@ namespace CarreraFrontend.Forms
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -321,6 +322,7 @@ namespace CarreraFrontend.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Alta_Carreras";
             this.Text = "Nueva Carrera";
+            this.Load += new System.EventHandler(this.Alta_Carreras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudAñosCursado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCuatrimestre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();

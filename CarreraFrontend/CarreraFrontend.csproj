@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarreraBackend\CarreraBackend.csproj" />
+    <ProjectReference Include="..\CarreraWebAPI\CarreraWebAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
