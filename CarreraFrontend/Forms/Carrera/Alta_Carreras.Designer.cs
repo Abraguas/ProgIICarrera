@@ -206,6 +206,7 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.RowTemplate.Height = 25;
             this.dgvAsignaturas.Size = new System.Drawing.Size(696, 218);
             this.dgvAsignaturas.TabIndex = 23;
+            this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignatura_Quitar_CellContentClick);
             // 
             // col_id
             // 

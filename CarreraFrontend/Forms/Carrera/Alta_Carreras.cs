@@ -35,7 +35,7 @@ namespace CarreraFrontend.Forms
         private Accion modo;
         private ClienteSingleton cliente;
         private Carr oCarrera;
-        private Detal oDetalle; 
+        private Detal oDetalle;
 
         public Alta_Carreras(Accion modo, int nro)
         {
@@ -54,13 +54,13 @@ namespace CarreraFrontend.Forms
         private void Alta_Carreras_Load(object sender, EventArgs e)
         {
             Iniciar();
-       
+
         }
         private async void Iniciar()
         {
             if (modo.Equals(Accion.CREATE))
             {
-                 AsignarNumeroCarrreraAsync();
+                AsignarNumeroCarrreraAsync();
             }
             if (modo.Equals(Accion.UPDATE))
             {
@@ -74,7 +74,7 @@ namespace CarreraFrontend.Forms
         {
             dgvAsignaturas.Rows.Clear();
             List<Detal> detalles;
-            string url = "https://localhost:5001/api/Carreras/" + oCarrera.Id;
+            string url = "https://localhost:44307/api/Carreras/" + oCarrera.Id;//4307(mati),5001(franco)
             var resultado = await cliente.GetAsync(url);
             oCarrera = JsonConvert.DeserializeObject<Carr>(resultado);
 
@@ -90,6 +90,12 @@ namespace CarreraFrontend.Forms
         //BOTONES
         private void btnAgregar_Asig_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNom_Carrera.Text))
+            {
+                MessageBox.Show("El campo Nombre de Carrera es obligatorio!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (ExisteProductoEnGrilla(cboMateria.Text))
             {
                 MessageBox.Show("La asignatura ya fue registrada!", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,13 +115,13 @@ namespace CarreraFrontend.Forms
 
 
 
-            
+
         }
 
         private async void GrabarDetalle(Detal oDetalle)
         {
             string data = JsonConvert.SerializeObject(oDetalle);
-            string url = "https://localhost:5001/api/Detalles/" + oCarrera.Id;
+            string url = "https://localhost:44307/api/Detalles/" + oCarrera.Id;
 
             if ((await cliente.PostAsync(url, data)) == "Ok")
             {
@@ -136,15 +142,14 @@ namespace CarreraFrontend.Forms
                 return;
             }
 
-
             oCarrera.Nombre = txtNom_Carrera.Text;
             oCarrera.Titulo = Convert.ToString(cboTitulo.SelectedItem);
             string data = JsonConvert.SerializeObject(oCarrera);
 
-            
-            string url = "https://localhost:5001/api/Carreras";
 
-            if(modo == Accion.CREATE)
+            string url = "https://localhost:44307/api/Carreras";
+
+            if (modo == Accion.CREATE)
             {
                 if ((await cliente.PostAsync(url, data)) == "Ok")
                 {
@@ -198,7 +203,7 @@ namespace CarreraFrontend.Forms
 
         private async Task CargarCombo()
         {
-            string url = "https://localhost:5001/api/Asignatura/Asignatura";
+            string url = "https://localhost:44307/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
             List<Asign> lst = JsonConvert.DeserializeObject<List<Asign>>(resultado);
             cboMateria.DataSource = lst;
@@ -217,14 +222,13 @@ namespace CarreraFrontend.Forms
 
         private async void AsignarNumeroCarrreraAsync()
         {
-            string url = "https://localhost:5001/api/Carreras/ProximoId";           
+            string url = "https://localhost:44307/api/Carreras/ProximoId";
             var resultado = await cliente.GetAsync(url);
             int id = JsonConvert.DeserializeObject<int>(resultado);
             oCarrera.Id = id;
             lblCarreraNro.Text = "    Carrera Nro: " + id;
 
         }
-
 
         private bool ExisteProductoEnGrilla(string text)
         {
@@ -235,9 +239,14 @@ namespace CarreraFrontend.Forms
             }
             return false;
         }
-
-
-
+        private void dgvAsignatura_Quitar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                dgvAsignaturas.Rows.RemoveAt(e.RowIndex);
+                MessageBox.Show("Se borró el detalle con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
         //----------------------------------------------------------------
         private void lblCarreraNro_Click(object sender, EventArgs e)

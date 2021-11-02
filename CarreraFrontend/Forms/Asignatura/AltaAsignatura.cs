@@ -34,40 +34,51 @@ namespace CarreraFrontend.Forms.Asignatura
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+   
 
         private async void btnAceptarAsig_Click(object sender, EventArgs e)
         {
-            if(modo == Accion.CREATE)
+            if (txtNom_Asignatura.Text.Trim() == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre de Asignatura", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNom_Asignatura.Focus();
+                return;
+            }
+            if (modo == Accion.CREATE)
             {
                 asignatura.Id = 0;
                 asignatura.Nombre = txtNom_Asignatura.Text;
-                await cliente.PostAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
+                await cliente.PostAsync("https://localhost:44307/api/Asignatura", JsonConvert.SerializeObject(asignatura));
                 MessageBox.Show("Se grabó la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNom_Asignatura.Clear();
             }
             else if (modo == Accion.UPDATE)
             {
                 asignatura.Nombre = txtNom_Asignatura.Text;
-                await cliente.PutAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
+                await cliente.PutAsync("https://localhost:44307/api/Asignatura", JsonConvert.SerializeObject(asignatura));
                 MessageBox.Show("Se actualizó la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
-
             }
 
+        }
+        private void btn_CancelarAsig_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cancelar el registro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void AltaAsignatura_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void btn_CancelarAsig_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            this.Dispose();
+
         }
+
+
     }
 }
