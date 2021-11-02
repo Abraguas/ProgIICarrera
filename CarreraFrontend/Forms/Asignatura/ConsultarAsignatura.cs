@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Asign = CarreraBackend.Entidades.Asignatura;
+
 
 namespace CarreraFrontend.Forms.Asignatura
 {
@@ -31,11 +33,11 @@ namespace CarreraFrontend.Forms.Asignatura
         private async void CargarDgv()
         {
             dgvConsultar_Asignatura.Rows.Clear();
-            List<CarreraBackend.Entidades.Asignatura> asignaturas;
+            List<Asign> asignaturas;
             string url = "https://localhost:5001/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
-            asignaturas = JsonConvert.DeserializeObject<List<CarreraBackend.Entidades.Asignatura>>(resultado);
-            foreach(CarreraBackend.Entidades.Asignatura asignatura in asignaturas)
+            asignaturas = JsonConvert.DeserializeObject<List<Asign>>(resultado);
+            foreach(Asign asignatura in asignaturas)
             {
                 dgvConsultar_Asignatura.Rows.Add(new object[] { asignatura.Id, asignatura.Nombre });
 

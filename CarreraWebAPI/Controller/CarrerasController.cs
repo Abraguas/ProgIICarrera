@@ -34,6 +34,12 @@ namespace CarreraWebAPI.Controllers
             return Ok(app_carre.ObtenerProximoID());
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetCarreraPorID(int id)
+        {
+            return Ok(app_carre.ConsultarPorID(id));
+        }
+
         [HttpPost]
         public IActionResult PostCarrera(Carrera oCarrera)
         {

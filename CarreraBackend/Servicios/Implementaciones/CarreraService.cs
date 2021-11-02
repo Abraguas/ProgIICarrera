@@ -37,14 +37,16 @@ namespace CarreraBackend.Servicios.Implementaciones
             else return false;
         }
 
-        //public List<Carrera> ConsultarCarreras(List<Parametro> criterios)
-        //{
-        //    dao.GetByFilters(criterios);
-        //}
         public List<Carrera> Consultar()
         {
            return dao.Get();
         }
+
+        public Carrera ConsultarPorID(int id)
+        {
+            return dao.GetById(id);
+        }
+
         public bool Grabar(Carrera oCarrera)
         {
             return dao.Save(oCarrera);

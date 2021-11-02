@@ -104,5 +104,34 @@ namespace CarreraBackend.Acceso_a_Datos
             return (int)helper.EjecutarSPSalida("carrera_proximo_id","@next");
 
         }
+
+        public Carrera GetById(int id)
+        {
+            DataTable carreras = helper.ConsultarConParametro("consultar_carrera_id", new Parametro("@id", Convert.ToString(id)));
+            DataTable detalles = helper.ConsultarConParametro(@"consultar_detalles_id", new Parametro("@id", Convert.ToString(id)));
+            List<DetalleCarrera> listaD = new List<DetalleCarrera>(); 
+            Carrera carrera;
+            DetalleCarrera detalle;
+
+            foreach (DataRow filaD in detalles.Rows)
+            {
+                detalle = new DetalleCarrera(
+                                             Convert.ToInt32(filaD["id_detalle"]),
+                                             Convert.ToInt32(filaD["anio_cursado"]),
+                                             Convert.ToInt32(filaD["cuatrimestre"]),
+                                             new Asignatura(Convert.ToInt32(filaD["id_materia"]), Convert.ToString(filaD["nombre"]))
+                                            );
+                listaD.Add(detalle);
+            }
+
+            carrera = new Carrera(
+                                    Convert.ToInt32(carreras.Rows[0]["id_carrera"]),
+                                    Convert.ToString(carreras.Rows[0]["nombre"]),
+                                    Convert.ToString(carreras.Rows[0]["titulo"]),
+                                    listaD
+                                    );
+
+            return carrera;
+        }
     }
 }

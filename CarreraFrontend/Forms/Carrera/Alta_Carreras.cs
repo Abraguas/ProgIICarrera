@@ -45,10 +45,9 @@ namespace CarreraFrontend.Forms
             cliente = ClienteSingleton.GetInstancia();
 
             this.modo = modo;
-            if (modo.Equals(Accion.READ))
+            if (modo.Equals(Accion.UPDATE))
             {
-                btnAceptar.Enabled = false;
-                this.Text = "Ver Carrera";  
+
             }
         }
 
@@ -63,9 +62,34 @@ namespace CarreraFrontend.Forms
             {
                  AsignarNumeroCarrreraAsync();
             }
+            if (modo.Equals(Accion.UPDATE))
+            {
+                CargarCarrera();
+            }
             await CargarCombo();
 
         }
+
+        private async void CargarCarrera()
+        {
+            dgvAsignaturas.Rows.Clear();
+            List<Detal> detalles;
+            string url = "https://localhost:5001/api/Carreras/" + oCarrera.Id;
+            var resultado = await cliente.GetAsync(url);
+            oCarrera = JsonConvert.DeserializeObject<Carr>(resultado);
+
+            txtNom_Carrera.Text = oCarrera.Nombre;
+            cboTitulo.SelectedItem = oCarrera.Titulo;
+            detalles = oCarrera.Detalles;
+
+
+            foreach (Detal detalle in detalles)
+            {
+                dgvAsignaturas.Rows.Add(new object[] { detalle.Materia.Id, detalle.Materia.Nombre, detalle.AnioCursado, detalle.Cuatrimestre });
+
+            }
+        }
+
         //BOTONES
         private void btnAgregar_Asig_Click(object sender, EventArgs e)
         {
@@ -97,17 +121,32 @@ namespace CarreraFrontend.Forms
             string data = JsonConvert.SerializeObject(oCarrera);
 
             
-            string url2 = "https://localhost:5001/api/Carreras";
+            string url = "https://localhost:5001/api/Carreras";
 
-            if ((await cliente.PostAsync(url2,data)) == "Ok")
+            if(modo == Accion.CREATE)
             {
-                MessageBox.Show("Carrera registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
-                AsignarNumeroCarrreraAsync();
+                if ((await cliente.PostAsync(url, data)) == "Ok")
+                {
+                    MessageBox.Show("Carrera registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                    AsignarNumeroCarrreraAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un inconveniente al registrar la Carrera!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            else if (modo == Accion.UPDATE)
             {
-                MessageBox.Show("Ha ocurrido un inconveniente al registrar la Carrera!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if ((await cliente.PutAsync(url, data)) == "Ok")
+                {
+                    MessageBox.Show("Carrera actualizada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un inconveniente al actualizar la Carrera!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
