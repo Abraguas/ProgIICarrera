@@ -1,4 +1,6 @@
 ﻿using CarreraBackend.Servicios.Interfaces;
+using CarreraFrontend.Cliente;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +16,14 @@ namespace CarreraFrontend.Forms.Asignatura
 
     public partial class AltaAsignatura : Form
     {
-        private IAsignaturaService servicio_asignatura;
+        private ClienteSingleton cliente;
         private Accion modo;
+        private CarreraBackend.Entidades.Asignatura asignatura;
         public AltaAsignatura(Accion modo, int nro)
         {
             InitializeComponent();
-
+            asignatura = new CarreraBackend.Entidades.Asignatura();
+            cliente = ClienteSingleton.GetInstancia();
             //servicio_asignatura = new AsignaturaService().Grabar();
             this.modo = modo;
             if (modo.Equals(Accion.READ))
@@ -34,5 +38,15 @@ namespace CarreraFrontend.Forms.Asignatura
         {
 
         }
+
+        private async void btnAceptarAsig_Click(object sender, EventArgs e)
+        {
+            asignatura.Id = 0;
+            asignatura.Nombre = txtNom_Asignatura.Text;
+            await cliente.PostAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
+
+
+        }
+     
     }
 }

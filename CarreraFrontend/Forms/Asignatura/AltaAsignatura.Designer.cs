@@ -66,6 +66,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnAceptarAsig.TabIndex = 20;
             this.btnAceptarAsig.Text = "Aceptar";
             this.btnAceptarAsig.UseVisualStyleBackColor = false;
+            this.btnAceptarAsig.Click += new System.EventHandler(this.btnAceptarAsig_Click);
             // 
             // txtNom_Asignatura
             // 

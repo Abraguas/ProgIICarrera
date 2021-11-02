@@ -1,4 +1,6 @@
 ﻿using CarreraBackend.Servicios.Interfaces;
+using CarreraFrontend.Cliente;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +15,10 @@ namespace CarreraFrontend.Forms.Asignatura
 {
     public partial class ConsultarAsignatura : Form
     {
-        private IAsignaturaService servicio_asignatura;
+
+
+        private CarreraBackend.Entidades.Asignatura asignatura;
+        private ClienteSingleton cliente;
         private Accion modo;
         public ConsultarAsignatura(Accion modo)
         {
@@ -31,6 +36,12 @@ namespace CarreraFrontend.Forms.Asignatura
         private void ConsultarAsignatura_Load(object sender, EventArgs e)
         {
 
+        }
+        private async Task CargarAsignaturaAsync()
+        {
+            string url = "https://localhost:5001/api/Asignatura/Asignatura";
+            var resultado = await cliente.GetAsync(url);
+            asignatura = JsonConvert.DeserializeObject<CarreraBackend.Entidades.Asignatura>(resultado);
         }
     }
 }
