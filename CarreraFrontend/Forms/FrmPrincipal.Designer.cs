@@ -91,12 +91,14 @@ namespace CarreraFrontend.Forms
             this.agregarAsignaturaToolStripMenuItem.Name = "agregarAsignaturaToolStripMenuItem";
             this.agregarAsignaturaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.agregarAsignaturaToolStripMenuItem.Text = "Agregar Asignatura";
+            this.agregarAsignaturaToolStripMenuItem.Click += new System.EventHandler(this.agregarAsignaturaToolStripMenuItem_Click);
             // 
             // consultarAsignaturaToolStripMenuItem
             // 
             this.consultarAsignaturaToolStripMenuItem.Name = "consultarAsignaturaToolStripMenuItem";
             this.consultarAsignaturaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.consultarAsignaturaToolStripMenuItem.Text = "Consultar Asignatura";
+            this.consultarAsignaturaToolStripMenuItem.Click += new System.EventHandler(this.consultarAsignaturaToolStripMenuItem_Click);
             // 
             // carrerasToolStripMenuItem
             // 
@@ -112,12 +114,14 @@ namespace CarreraFrontend.Forms
             this.cargarNuevaCarreraToolStripMenuItem.Name = "cargarNuevaCarreraToolStripMenuItem";
             this.cargarNuevaCarreraToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cargarNuevaCarreraToolStripMenuItem.Text = "Cargar nueva Carrera";
+            this.cargarNuevaCarreraToolStripMenuItem.Click += new System.EventHandler(this.cargarNuevaCarreraToolStripMenuItem_Click);
             // 
             // consultarCarrerasToolStripMenuItem
             // 
             this.consultarCarrerasToolStripMenuItem.Name = "consultarCarrerasToolStripMenuItem";
             this.consultarCarrerasToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.consultarCarrerasToolStripMenuItem.Text = "Consultar Carreras";
+            this.consultarCarrerasToolStripMenuItem.Click += new System.EventHandler(this.consultarCarrerasToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 

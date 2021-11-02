@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarreraBackend.Servicios.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,24 @@ namespace CarreraFrontend.Forms.Asignatura
 {
     public partial class ConsultarAsignatura : Form
     {
-        public ConsultarAsignatura()
+        private IAsignaturaService servicio_asignatura;
+        private Accion modo;
+        public ConsultarAsignatura(Accion modo)
         {
             InitializeComponent();
+            //servicio_carrera = new CarreraService().Grabar();
+            this.modo = modo;
+            if (modo.Equals(Accion.READ))
+            {
+                //btnAceptar.Enabled = false;
+                //this.Text = "Ver Carrera";
+                // Cargar_CarreraAsync(nro);
+            }
+        }
+
+        private void ConsultarAsignatura_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

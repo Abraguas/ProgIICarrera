@@ -208,6 +208,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarAsignatura";
             this.Text = "Consultar Asignatura";
+            this.Load += new System.EventHandler(this.ConsultarAsignatura_Load);
             this.gbResultados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Asignatura)).EndInit();
             this.gbFiltros.ResumeLayout(false);

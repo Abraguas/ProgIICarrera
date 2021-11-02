@@ -212,6 +212,7 @@ namespace CarreraFrontend.Forms.Carrera
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarCarrera";
             this.Text = "Consultar Carrera";
+            this.Load += new System.EventHandler(this.ConsultarCarrera_Load);
             this.gbResultados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Carrera)).EndInit();
             this.gbFiltros.ResumeLayout(false);
