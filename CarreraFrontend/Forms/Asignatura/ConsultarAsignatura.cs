@@ -34,7 +34,7 @@ namespace CarreraFrontend.Forms.Asignatura
         {
             dgvConsultar_Asignatura.Rows.Clear();
             List<Asign> asignaturas;
-            string url = "https://localhost:5001/api/Asignatura/Asignatura";
+            string url = "https://localhost:44307/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
             asignaturas = JsonConvert.DeserializeObject<List<Asign>>(resultado);
             foreach(Asign asignatura in asignaturas)
@@ -45,11 +45,10 @@ namespace CarreraFrontend.Forms.Asignatura
         }
         private async Task<string> BorrarAsignaturaAsync(int id)
         {
-            string url = "https://localhost:5001/api/Asignatura/" + id;
+            string url = "https://localhost:44307/api/Asignatura/" + id;
             var resultado = await cliente.DeleteAsync(url);
             return resultado;
         }
-
         private async void dgvConsultar_Asignatura_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //EDITAR
@@ -77,7 +76,6 @@ namespace CarreraFrontend.Forms.Asignatura
             }
 
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
                 this.Dispose();
