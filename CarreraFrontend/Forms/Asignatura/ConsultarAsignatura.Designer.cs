@@ -173,6 +173,7 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             // cboBuscarAsignatura
             // 
+            this.cboBuscarAsignatura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBuscarAsignatura.FormattingEnabled = true;
             this.cboBuscarAsignatura.Location = new System.Drawing.Point(98, 38);
             this.cboBuscarAsignatura.Name = "cboBuscarAsignatura";

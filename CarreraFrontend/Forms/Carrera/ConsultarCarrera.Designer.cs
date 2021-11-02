@@ -36,16 +36,16 @@ namespace CarreraFrontend.Forms.Carrera
             this.btnEditar_Carrera = new System.Windows.Forms.Button();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvConsultar_Carrera = new System.Windows.Forms.DataGridView();
-            this.gbFiltros = new System.Windows.Forms.GroupBox();
-            this.cboBuscarCarrera = new System.Windows.Forms.ComboBox();
-            this.chkBaja = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnConsultar_Carrera = new System.Windows.Forms.Button();
             this.col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.col_borrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.cboBuscarCarrera = new System.Windows.Forms.ComboBox();
+            this.chkBaja = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnConsultar_Carrera = new System.Windows.Forms.Button();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Carrera)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -127,6 +127,41 @@ namespace CarreraFrontend.Forms.Carrera
             this.dgvConsultar_Carrera.TabIndex = 0;
             this.dgvConsultar_Carrera.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultar_Carrera_CellContentClick);
             // 
+            // col_Id
+            // 
+            this.col_Id.HeaderText = "Id";
+            this.col_Id.Name = "col_Id";
+            this.col_Id.ReadOnly = true;
+            this.col_Id.Visible = false;
+            // 
+            // col_Carrera
+            // 
+            this.col_Carrera.HeaderText = "Carrera";
+            this.col_Carrera.Name = "col_Carrera";
+            this.col_Carrera.ReadOnly = true;
+            // 
+            // col_titulo
+            // 
+            this.col_titulo.HeaderText = "Titulo";
+            this.col_titulo.Name = "col_titulo";
+            this.col_titulo.ReadOnly = true;
+            // 
+            // col_editar
+            // 
+            this.col_editar.HeaderText = "Editar";
+            this.col_editar.Name = "col_editar";
+            this.col_editar.ReadOnly = true;
+            this.col_editar.Text = "Editar Carrera";
+            this.col_editar.UseColumnTextForButtonValue = true;
+            // 
+            // col_borrar
+            // 
+            this.col_borrar.HeaderText = "Borrar";
+            this.col_borrar.Name = "col_borrar";
+            this.col_borrar.ReadOnly = true;
+            this.col_borrar.Text = "Borrar Carrera";
+            this.col_borrar.UseColumnTextForButtonValue = true;
+            // 
             // gbFiltros
             // 
             this.gbFiltros.Controls.Add(this.cboBuscarCarrera);
@@ -146,6 +181,7 @@ namespace CarreraFrontend.Forms.Carrera
             // 
             // cboBuscarCarrera
             // 
+            this.cboBuscarCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBuscarCarrera.FormattingEnabled = true;
             this.cboBuscarCarrera.Location = new System.Drawing.Point(94, 33);
             this.cboBuscarCarrera.Name = "cboBuscarCarrera";
@@ -184,41 +220,6 @@ namespace CarreraFrontend.Forms.Carrera
             this.btnConsultar_Carrera.TabIndex = 0;
             this.btnConsultar_Carrera.Text = "Consultar";
             this.btnConsultar_Carrera.UseVisualStyleBackColor = false;
-            // 
-            // col_Id
-            // 
-            this.col_Id.HeaderText = "Id";
-            this.col_Id.Name = "col_Id";
-            this.col_Id.ReadOnly = true;
-            this.col_Id.Visible = false;
-            // 
-            // col_Carrera
-            // 
-            this.col_Carrera.HeaderText = "Carrera";
-            this.col_Carrera.Name = "col_Carrera";
-            this.col_Carrera.ReadOnly = true;
-            // 
-            // col_titulo
-            // 
-            this.col_titulo.HeaderText = "Titulo";
-            this.col_titulo.Name = "col_titulo";
-            this.col_titulo.ReadOnly = true;
-            // 
-            // col_editar
-            // 
-            this.col_editar.HeaderText = "Editar";
-            this.col_editar.Name = "col_editar";
-            this.col_editar.ReadOnly = true;
-            this.col_editar.Text = "Editar Carrera";
-            this.col_editar.UseColumnTextForButtonValue = true;
-            // 
-            // col_borrar
-            // 
-            this.col_borrar.HeaderText = "Borrar";
-            this.col_borrar.Name = "col_borrar";
-            this.col_borrar.ReadOnly = true;
-            this.col_borrar.Text = "Borrar Carrera";
-            this.col_borrar.UseColumnTextForButtonValue = true;
             // 
             // ConsultarCarrera
             // 
