@@ -29,20 +29,24 @@ namespace CarreraFrontend.Forms.Asignatura
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarAsignatura));
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar_Asig = new System.Windows.Forms.Button();
             this.btnEditar_Asig = new System.Windows.Forms.Button();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvConsultar_Asignatura = new System.Windows.Forms.DataGridView();
-            this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cuatrimestre_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.cboBuscarAsignatura = new System.Windows.Forms.ComboBox();
             this.chkBaja = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsultar_Asig = new System.Windows.Forms.Button();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.col_borrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Asignatura)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -105,36 +109,34 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             this.dgvConsultar_Asignatura.AllowUserToAddRows = false;
             this.dgvConsultar_Asignatura.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvConsultar_Asignatura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConsultar_Asignatura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultar_Asignatura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConsultar_Asignatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultar_Asignatura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_Asignatura,
-            this.col_Carrera,
-            this.col_cuatrimestre_num});
+            this.col_id,
+            this.col_Nombre,
+            this.col_editar,
+            this.col_borrar});
             this.dgvConsultar_Asignatura.Location = new System.Drawing.Point(8, 23);
             this.dgvConsultar_Asignatura.Name = "dgvConsultar_Asignatura";
             this.dgvConsultar_Asignatura.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvConsultar_Asignatura.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvConsultar_Asignatura.RowTemplate.Height = 25;
             this.dgvConsultar_Asignatura.Size = new System.Drawing.Size(730, 191);
             this.dgvConsultar_Asignatura.TabIndex = 0;
-            // 
-            // col_Asignatura
-            // 
-            this.col_Asignatura.HeaderText = "Asignatura";
-            this.col_Asignatura.Name = "col_Asignatura";
-            this.col_Asignatura.ReadOnly = true;
-            // 
-            // col_Carrera
-            // 
-            this.col_Carrera.HeaderText = "Carrera";
-            this.col_Carrera.Name = "col_Carrera";
-            this.col_Carrera.ReadOnly = true;
-            // 
-            // col_cuatrimestre_num
-            // 
-            this.col_cuatrimestre_num.HeaderText = "Numero de Cuatrimestre";
-            this.col_cuatrimestre_num.Name = "col_cuatrimestre_num";
-            this.col_cuatrimestre_num.ReadOnly = true;
+            this.dgvConsultar_Asignatura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultar_Asignatura_CellContentClick);
             // 
             // gbFiltros
             // 
@@ -194,6 +196,39 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnConsultar_Asig.Text = "Consultar";
             this.btnConsultar_Asig.UseVisualStyleBackColor = false;
             // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "Id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // col_Nombre
+            // 
+            this.col_Nombre.HeaderText = "Nombre";
+            this.col_Nombre.Name = "col_Nombre";
+            this.col_Nombre.ReadOnly = true;
+            // 
+            // col_editar
+            // 
+            this.col_editar.HeaderText = "Editar";
+            this.col_editar.Name = "col_editar";
+            this.col_editar.ReadOnly = true;
+            this.col_editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_editar.Text = "Editar Asignatura";
+            this.col_editar.UseColumnTextForButtonValue = true;
+            // 
+            // col_borrar
+            // 
+            this.col_borrar.HeaderText = "Borrar";
+            this.col_borrar.Name = "col_borrar";
+            this.col_borrar.ReadOnly = true;
+            this.col_borrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_borrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_borrar.Text = "Borrar Asignatura";
+            this.col_borrar.UseColumnTextForButtonValue = true;
+            // 
             // ConsultarAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -226,13 +261,14 @@ namespace CarreraFrontend.Forms.Asignatura
         private System.Windows.Forms.Button btnEditar_Asig;
         private System.Windows.Forms.GroupBox gbResultados;
         private System.Windows.Forms.DataGridView dgvConsultar_Asignatura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Asignatura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Carrera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre_num;
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.ComboBox cboBuscarAsignatura;
         private System.Windows.Forms.CheckBox chkBaja;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConsultar_Asig;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewButtonColumn col_editar;
+        private System.Windows.Forms.DataGridViewButtonColumn col_borrar;
     }
 }

@@ -17,13 +17,12 @@ namespace CarreraFrontend.Forms.Asignatura
     {
 
 
-        private CarreraBackend.Entidades.Asignatura asignatura;
         private ClienteSingleton cliente;
         private Accion modo;
         public ConsultarAsignatura(Accion modo)
         {
             InitializeComponent();
-            //servicio_carrera = new CarreraService().Grabar();
+            cliente = ClienteSingleton.GetInstancia();
             this.modo = modo;
             if (modo.Equals(Accion.READ))
             {
@@ -35,13 +34,33 @@ namespace CarreraFrontend.Forms.Asignatura
 
         private void ConsultarAsignatura_Load(object sender, EventArgs e)
         {
-
+            CargarAsignaturaAsync();
         }
-        private async Task CargarAsignaturaAsync()
+        private async void CargarAsignaturaAsync()
         {
+            List<CarreraBackend.Entidades.Asignatura> asignaturas;
             string url = "https://localhost:5001/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
-            asignatura = JsonConvert.DeserializeObject<CarreraBackend.Entidades.Asignatura>(resultado);
+            asignaturas = JsonConvert.DeserializeObject<List<CarreraBackend.Entidades.Asignatura>>(resultado);
+            foreach(CarreraBackend.Entidades.Asignatura asignatura in asignaturas)
+            {
+                dgvConsultar_Asignatura.Rows.Add(new object[] { asignatura.Id, asignatura.Nombre });
+
+            }
+        }
+
+        private void dgvConsultar_Asignatura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 2)
+            {
+                int id = (int)dgvConsultar_Asignatura.Rows[e.RowIndex].Cells[0].Value;
+                MessageBox.Show(id.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(e.ColumnIndex == 3) 
+            {
+                int id = (int)dgvConsultar_Asignatura.Rows[e.RowIndex].Cells[0].Value;
+                MessageBox.Show(id.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
