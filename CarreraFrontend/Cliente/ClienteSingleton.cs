@@ -33,7 +33,7 @@ namespace CarreraFrontend.Cliente
             return content;
         }
 
-        public async Task<string> PostAsync(string url, string data)
+        public async Task <string> PostAsync(string url, string data)
         {
             StringContent content = new StringContent(data, Encoding.UTF8,
             "application/json");

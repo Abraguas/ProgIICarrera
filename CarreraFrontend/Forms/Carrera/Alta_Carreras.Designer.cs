@@ -53,6 +53,7 @@ namespace CarreraFrontend.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAgregar_Asig = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
@@ -124,10 +125,13 @@ namespace CarreraFrontend.Forms
             this.btnCancelar.TabIndex = 25;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cboTitulo
             // 
             this.cboTitulo.FormattingEnabled = true;
+            this.cboTitulo.Items.AddRange(new object[] {
+            "Tecnicatura"});
             this.cboTitulo.Location = new System.Drawing.Point(168, 134);
             this.cboTitulo.Name = "cboTitulo";
             this.cboTitulo.Size = new System.Drawing.Size(141, 23);
@@ -144,6 +148,7 @@ namespace CarreraFrontend.Forms
             this.btnAceptar.TabIndex = 24;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label1
             // 
@@ -227,9 +232,11 @@ namespace CarreraFrontend.Forms
             // 
             // btn_quitar
             // 
+            this.btn_quitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_quitar.HeaderText = "Quitar";
             this.btn_quitar.Name = "btn_quitar";
             this.btn_quitar.ReadOnly = true;
+            this.btn_quitar.Text = "X";
             // 
             // nudCuatrimestre
             // 
@@ -288,12 +295,26 @@ namespace CarreraFrontend.Forms
             this.label2.TabIndex = 18;
             this.label2.Text = "Nombre de la Carrera";
             // 
+            // btnAgregar_Asig
+            // 
+            this.btnAgregar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar_Asig.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAgregar_Asig.Location = new System.Drawing.Point(21, 246);
+            this.btnAgregar_Asig.Name = "btnAgregar_Asig";
+            this.btnAgregar_Asig.Size = new System.Drawing.Size(82, 26);
+            this.btnAgregar_Asig.TabIndex = 32;
+            this.btnAgregar_Asig.Text = "Agregar";
+            this.btnAgregar_Asig.UseVisualStyleBackColor = false;
+            this.btnAgregar_Asig.Click += new System.EventHandler(this.btnAgregar_Asig_Click);
+            // 
             // Alta_Carreras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(70)))), ((int)(((byte)(101)))));
             this.ClientSize = new System.Drawing.Size(713, 556);
+            this.Controls.Add(this.btnAgregar_Asig);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cboMateria);
             this.Controls.Add(this.label5);
@@ -339,15 +360,16 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNom_Carrera;
         private System.Windows.Forms.DataGridView dgvAsignaturas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Asignatura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_año;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_quitar;
         private System.Windows.Forms.NumericUpDown nudCuatrimestre;
         private System.Windows.Forms.NumericUpDown nudAñosCursado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAgregar_Asig;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Asignatura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_año;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_quitar;
     }
 }

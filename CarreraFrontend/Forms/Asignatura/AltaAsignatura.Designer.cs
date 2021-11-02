@@ -116,7 +116,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.panel2.Controls.Add(this.btnAceptarAsig);
             this.panel2.Controls.Add(this.txtNom_Asignatura);
             this.panel2.Controls.Add(this.lblNom_Asignatura);
-            this.panel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(-2, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(485, 399);

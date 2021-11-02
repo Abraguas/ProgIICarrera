@@ -44,8 +44,6 @@ namespace CarreraFrontend.Forms.Asignatura
             asignatura.Id = 0;
             asignatura.Nombre = txtNom_Asignatura.Text;
             await cliente.PostAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
-
-
         }
      
     }
