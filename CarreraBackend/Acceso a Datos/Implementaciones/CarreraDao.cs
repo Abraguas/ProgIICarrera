@@ -101,7 +101,15 @@ namespace CarreraBackend.Acceso_a_Datos
 
         public int GetNextID()
         {
-            return (int)helper.EjecutarSPSalida("carrera_proximo_id","@next");
+            try
+            {
+
+                 return (int)helper.EjecutarSPSalida("carrera_proximo_id","@next");
+            }
+            catch(Exception)
+            {
+                return 1;
+            }
 
         }
 

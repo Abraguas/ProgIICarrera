@@ -43,7 +43,8 @@ namespace CarreraFrontend.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.txtNom_Carrera = new System.Windows.Forms.TextBox();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_idAsignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_idDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +85,7 @@ namespace CarreraFrontend.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 66);
             this.panel1.TabIndex = 16;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -186,7 +188,8 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_id,
+            this.col_idAsignatura,
+            this.col_idDetalle,
             this.col_Asignatura,
             this.col_año,
             this.col_cuatrimestre,
@@ -206,12 +209,19 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.TabIndex = 23;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignatura_Quitar_CellContentClick);
             // 
-            // col_id
+            // col_idAsignatura
             // 
-            this.col_id.HeaderText = "Id";
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Visible = false;
+            this.col_idAsignatura.HeaderText = "Id Asignatura";
+            this.col_idAsignatura.Name = "col_idAsignatura";
+            this.col_idAsignatura.ReadOnly = true;
+            this.col_idAsignatura.Visible = false;
+            // 
+            // col_idDetalle
+            // 
+            this.col_idDetalle.HeaderText = "Id";
+            this.col_idDetalle.Name = "col_idDetalle";
+            this.col_idDetalle.ReadOnly = true;
+            this.col_idDetalle.Visible = false;
             // 
             // col_Asignatura
             // 
@@ -367,7 +377,8 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregar_Asig;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_idAsignatura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_idDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Asignatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_año;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre;

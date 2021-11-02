@@ -65,6 +65,7 @@ namespace CarreraFrontend.Forms
             if (modo.Equals(Accion.UPDATE))
             {
                 CargarCarrera();
+                lblCarreraNro.Text = "    Carrera Nro: " + oCarrera.Id;
             }
             await CargarCombo();
 
@@ -72,23 +73,33 @@ namespace CarreraFrontend.Forms
 
         private async void CargarCarrera()
         {
-            dgvAsignaturas.Rows.Clear();
-            List<Detal> detalles;
-            string url = "https://localhost:44307/api/Carreras/" + oCarrera.Id;//4307(mati),5001(franco)
+
+            string url = "https://localhost:5001/api/Carreras/" + oCarrera.Id;//4307(mati),5001(franco)
             var resultado = await cliente.GetAsync(url);
             oCarrera = JsonConvert.DeserializeObject<Carr>(resultado);
 
             txtNom_Carrera.Text = oCarrera.Nombre;
             cboTitulo.SelectedItem = oCarrera.Titulo;
-
+            CargarDetalles();
+        }
+        private void CargarDetalles()
+        {
+            dgvAsignaturas.Rows.Clear();
             foreach (Detal oDetalle in oCarrera.Detalles)
             {
-                dgvAsignaturas.Rows.Add(new string[] { "", oDetalle.Materia.Nombre, oDetalle.AnioCursado.ToString(), oDetalle.Cuatrimestre.ToString() });
+                dgvAsignaturas.Rows.Add(new string[]
+                                        {
+                                            oDetalle.Materia.Id.ToString(),
+                                            oDetalle.Id.ToString(),
+                                            oDetalle.Materia.Nombre,
+                                            oDetalle.AnioCursado.ToString(),
+                                            oDetalle.Cuatrimestre.ToString()
+                                        });
             }
         }
 
         //BOTONES
-        private void btnAgregar_Asig_Click(object sender, EventArgs e)
+        private async void btnAgregar_Asig_Click(object sender, EventArgs e)
         {
             if (ExisteProductoEnGrilla(cboMateria.Text))
             {
@@ -102,32 +113,60 @@ namespace CarreraFrontend.Forms
             oCarrera.AgregarDetalle(oDetalle);
             if (modo == Accion.UPDATE)
             {
-                GrabarDetalle(oDetalle);
+                await GrabarDetalle(oDetalle);
+                CargarCarrera();
 
             }
-            dgvAsignaturas.Rows.Add(new string[] { "", oDetalle.Materia.Nombre, oDetalle.AnioCursado.ToString(), oDetalle.Cuatrimestre.ToString() });
+            else if (modo == Accion.CREATE)
+            {
+                dgvAsignaturas.Rows.Add(new string[]
+                                           {
+                                            oDetalle.Materia.Id.ToString(),
+                                            oDetalle.Id.ToString(),
+                                            oDetalle.Materia.Nombre,
+                                            oDetalle.AnioCursado.ToString(),
+                                            oDetalle.Cuatrimestre.ToString()
+                                           });
+            }
+
 
 
 
 
         }
 
-        private async void GrabarDetalle(Detal oDetalle)
+        private async Task<bool> GrabarDetalle(Detal oDetalle)
         {
             string data = JsonConvert.SerializeObject(oDetalle);
-            string url = "https://localhost:44307/api/Detalles/" + oCarrera.Id;
+            string url = "https://localhost:5001/api/Detalles/" + oCarrera.Id;
 
             if ((await cliente.PostAsync(url, data)) == "Ok")
             {
                 MessageBox.Show("Asignatura añadida con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
 
             }
             else
             {
                 MessageBox.Show("Ha ocurrido un inconveniente al registrar la nueva Asignatura!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
+        private async void BorrarDetalle(int id)
+        {
+            string url = "https://localhost:5001/api/Detalles/" + id;
 
+            if ((await cliente.DeleteAsync(url)) == "true")
+            {
+                MessageBox.Show("Asignatura eliminada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarCarrera();
+                CargarDetalles();
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un inconveniente al eliminar la Asignatura!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNom_Carrera.Text) || string.IsNullOrEmpty(cboMateria.Text))
@@ -142,7 +181,7 @@ namespace CarreraFrontend.Forms
             string data = JsonConvert.SerializeObject(oCarrera);
 
 
-            string url = "https://localhost:44307/api/Carreras";
+            string url = "https://localhost:5001/api/Carreras";
 
             if (modo == Accion.CREATE)
             {
@@ -198,7 +237,7 @@ namespace CarreraFrontend.Forms
 
         private async Task CargarCombo()
         {
-            string url = "https://localhost:44307/api/Asignatura/Asignatura";
+            string url = "https://localhost:5001/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
             List<Asign> lst = JsonConvert.DeserializeObject<List<Asign>>(resultado);
             cboMateria.DataSource = lst;
@@ -217,7 +256,7 @@ namespace CarreraFrontend.Forms
 
         private async void AsignarNumeroCarrreraAsync()
         {
-            string url = "https://localhost:44307/api/Carreras/ProximoId";
+            string url = "https://localhost:5001/api/Carreras/ProximoId";
             var resultado = await cliente.GetAsync(url);
             int id = JsonConvert.DeserializeObject<int>(resultado);
             oCarrera.Id = id;
@@ -236,11 +275,30 @@ namespace CarreraFrontend.Forms
         }
         private void dgvAsignatura_Quitar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 5)
             {
-                dgvAsignaturas.Rows.RemoveAt(e.RowIndex);
-                MessageBox.Show("Se borró el detalle con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(modo == Accion.CREATE)
+                {
+                    dgvAsignaturas.Rows.RemoveAt(e.RowIndex);                  
+                    MessageBox.Show("Se borró el detalle con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (modo == Accion.UPDATE)
+                {
+                    int id = Convert.ToInt32(dgvAsignaturas.CurrentRow.Cells[1].Value);
+                    if(id == 0)
+                    {
+                        MessageBox.Show("No puede borrar una asignatura que insertó durante la edicion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        BorrarDetalle(id);
+                    }
+
+
+                    
+                }
             }
+
         }
 
         //----------------------------------------------------------------
@@ -255,6 +313,11 @@ namespace CarreraFrontend.Forms
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
