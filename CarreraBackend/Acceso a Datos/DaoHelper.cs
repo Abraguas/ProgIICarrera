@@ -18,7 +18,7 @@ namespace CarreraBackend.Acceso_a_Datos
 
         public DaoHelper()
         {
-            cadenaConexion = @"Data Source=localhost;Initial Catalog=db_carrera;Integrated Security=True";
+            cadenaConexion = @"Data Source=DESKTOP-OPJRSO7;Initial Catalog=db_carrera1;Integrated Security=True"; ;
             conexion = new SqlConnection(cadenaConexion);
         }
 
