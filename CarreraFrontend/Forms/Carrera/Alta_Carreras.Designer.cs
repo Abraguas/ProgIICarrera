@@ -45,8 +45,8 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_quitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nudCuatrimestre = new System.Windows.Forms.NumericUpDown();
             this.nudAñosCursado = new System.Windows.Forms.NumericUpDown();
@@ -188,8 +188,8 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
             this.col_Asignatura,
-            this.col_cuatrimestre,
             this.col_año,
+            this.col_cuatrimestre,
             this.btn_quitar});
             this.dgvAsignaturas.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvAsignaturas.Location = new System.Drawing.Point(12, 278);
@@ -218,17 +218,17 @@ namespace CarreraFrontend.Forms
             this.col_Asignatura.Name = "col_Asignatura";
             this.col_Asignatura.ReadOnly = true;
             // 
-            // col_cuatrimestre
-            // 
-            this.col_cuatrimestre.HeaderText = "Numero de Cuatrimestre";
-            this.col_cuatrimestre.Name = "col_cuatrimestre";
-            this.col_cuatrimestre.ReadOnly = true;
-            // 
             // col_año
             // 
             this.col_año.HeaderText = "Año de cursado";
             this.col_año.Name = "col_año";
             this.col_año.ReadOnly = true;
+            // 
+            // col_cuatrimestre
+            // 
+            this.col_cuatrimestre.HeaderText = "Numero de Cuatrimestre";
+            this.col_cuatrimestre.Name = "col_cuatrimestre";
+            this.col_cuatrimestre.ReadOnly = true;
             // 
             // btn_quitar
             // 
@@ -368,8 +368,8 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.Button btnAgregar_Asig;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Asignatura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_año;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestre;
         private System.Windows.Forms.DataGridViewButtonColumn btn_quitar;
     }
 }

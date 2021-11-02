@@ -18,26 +18,19 @@ namespace CarreraFrontend.Forms.Asignatura
 
 
         private ClienteSingleton cliente;
-        private Accion modo;
-        public ConsultarAsignatura(Accion modo)
+        public ConsultarAsignatura()
         {
             InitializeComponent();
             cliente = ClienteSingleton.GetInstancia();
-            this.modo = modo;
-            if (modo.Equals(Accion.READ))
-            {
-                //btnAceptar.Enabled = false;
-                //this.Text = "Ver Carrera";
-                // Cargar_CarreraAsync(nro);
-            }
         }
 
         private void ConsultarAsignatura_Load(object sender, EventArgs e)
         {
-            CargarAsignaturaAsync();
+            CargarDgv();
         }
-        private async void CargarAsignaturaAsync()
+        private async void CargarDgv()
         {
+            dgvConsultar_Asignatura.Rows.Clear();
             List<CarreraBackend.Entidades.Asignatura> asignaturas;
             string url = "https://localhost:5001/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
@@ -48,19 +41,44 @@ namespace CarreraFrontend.Forms.Asignatura
 
             }
         }
-
-        private void dgvConsultar_Asignatura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async Task<string> BorrarAsignaturaAsync(int id)
         {
+            string url = "https://localhost:5001/api/Asignatura/" + id;
+            var resultado = await cliente.DeleteAsync(url);
+            return resultado;
+        }
+
+        private async void dgvConsultar_Asignatura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //EDITAR
             if(e.ColumnIndex == 2)
             {
                 int id = (int)dgvConsultar_Asignatura.Rows[e.RowIndex].Cells[0].Value;
-                MessageBox.Show(id.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                AltaAsignatura frmNueva_Asignatura = new AltaAsignatura(Accion.UPDATE, id);
+                frmNueva_Asignatura.ShowDialog();
+                CargarDgv();
             }
+            //BORRAR
             else if(e.ColumnIndex == 3) 
             {
                 int id = (int)dgvConsultar_Asignatura.Rows[e.RowIndex].Cells[0].Value;
-                MessageBox.Show(id.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var result = (await BorrarAsignaturaAsync(id));
+                if ( result == "true")
+                {
+                    MessageBox.Show("Se borró la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo borrar la asignatura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                CargarDgv();
             }
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+                this.Dispose();
         }
     }
 }

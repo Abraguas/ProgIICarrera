@@ -32,21 +32,20 @@ namespace CarreraFrontend.Forms.Asignatura
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarAsignatura));
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEliminar_Asig = new System.Windows.Forms.Button();
-            this.btnEditar_Asig = new System.Windows.Forms.Button();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvConsultar_Asignatura = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.col_borrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.cboBuscarAsignatura = new System.Windows.Forms.ComboBox();
             this.chkBaja = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsultar_Asig = new System.Windows.Forms.Button();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.col_borrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Asignatura)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -64,32 +63,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "S&alir";
             this.btnSalir.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar_Asig
-            // 
-            this.btnEliminar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_Asig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminar_Asig.Location = new System.Drawing.Point(119, 406);
-            this.btnEliminar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnEliminar_Asig.Name = "btnEliminar_Asig";
-            this.btnEliminar_Asig.Size = new System.Drawing.Size(88, 27);
-            this.btnEliminar_Asig.TabIndex = 13;
-            this.btnEliminar_Asig.Text = "Eliminar";
-            this.btnEliminar_Asig.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar_Asig
-            // 
-            this.btnEditar_Asig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditar_Asig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar_Asig.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar_Asig.Location = new System.Drawing.Point(13, 406);
-            this.btnEditar_Asig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnEditar_Asig.Name = "btnEditar_Asig";
-            this.btnEditar_Asig.Size = new System.Drawing.Size(88, 27);
-            this.btnEditar_Asig.TabIndex = 12;
-            this.btnEditar_Asig.Text = "Editar";
-            this.btnEditar_Asig.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // gbResultados
             // 
@@ -113,6 +87,7 @@ namespace CarreraFrontend.Forms.Asignatura
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
             this.dgvConsultar_Asignatura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConsultar_Asignatura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvConsultar_Asignatura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -127,16 +102,57 @@ namespace CarreraFrontend.Forms.Asignatura
             this.col_Nombre,
             this.col_editar,
             this.col_borrar});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsultar_Asignatura.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvConsultar_Asignatura.Location = new System.Drawing.Point(8, 23);
             this.dgvConsultar_Asignatura.Name = "dgvConsultar_Asignatura";
             this.dgvConsultar_Asignatura.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            this.dgvConsultar_Asignatura.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvConsultar_Asignatura.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvConsultar_Asignatura.RowTemplate.Height = 25;
             this.dgvConsultar_Asignatura.Size = new System.Drawing.Size(730, 191);
             this.dgvConsultar_Asignatura.TabIndex = 0;
             this.dgvConsultar_Asignatura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultar_Asignatura_CellContentClick);
+            // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "Id";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Visible = false;
+            // 
+            // col_Nombre
+            // 
+            this.col_Nombre.HeaderText = "Nombre";
+            this.col_Nombre.Name = "col_Nombre";
+            this.col_Nombre.ReadOnly = true;
+            // 
+            // col_editar
+            // 
+            this.col_editar.HeaderText = "Editar";
+            this.col_editar.Name = "col_editar";
+            this.col_editar.ReadOnly = true;
+            this.col_editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_editar.Text = "Editar Asignatura";
+            this.col_editar.UseColumnTextForButtonValue = true;
+            // 
+            // col_borrar
+            // 
+            this.col_borrar.HeaderText = "Borrar";
+            this.col_borrar.Name = "col_borrar";
+            this.col_borrar.ReadOnly = true;
+            this.col_borrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_borrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_borrar.Text = "Borrar Asignatura";
+            this.col_borrar.UseColumnTextForButtonValue = true;
             // 
             // gbFiltros
             // 
@@ -196,39 +212,6 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btnConsultar_Asig.Text = "Consultar";
             this.btnConsultar_Asig.UseVisualStyleBackColor = false;
             // 
-            // col_id
-            // 
-            this.col_id.HeaderText = "Id";
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Visible = false;
-            // 
-            // col_Nombre
-            // 
-            this.col_Nombre.HeaderText = "Nombre";
-            this.col_Nombre.Name = "col_Nombre";
-            this.col_Nombre.ReadOnly = true;
-            // 
-            // col_editar
-            // 
-            this.col_editar.HeaderText = "Editar";
-            this.col_editar.Name = "col_editar";
-            this.col_editar.ReadOnly = true;
-            this.col_editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_editar.Text = "Editar Asignatura";
-            this.col_editar.UseColumnTextForButtonValue = true;
-            // 
-            // col_borrar
-            // 
-            this.col_borrar.HeaderText = "Borrar";
-            this.col_borrar.Name = "col_borrar";
-            this.col_borrar.ReadOnly = true;
-            this.col_borrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_borrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_borrar.Text = "Borrar Asignatura";
-            this.col_borrar.UseColumnTextForButtonValue = true;
-            // 
             // ConsultarAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -236,8 +219,6 @@ namespace CarreraFrontend.Forms.Asignatura
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(72)))), ((int)(((byte)(149)))));
             this.ClientSize = new System.Drawing.Size(771, 444);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnEliminar_Asig);
-            this.Controls.Add(this.btnEditar_Asig);
             this.Controls.Add(this.gbResultados);
             this.Controls.Add(this.gbFiltros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

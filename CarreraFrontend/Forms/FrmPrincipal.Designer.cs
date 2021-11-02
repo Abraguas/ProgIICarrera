@@ -73,8 +73,9 @@ namespace CarreraFrontend.Forms
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // soporteToolStripMenuItem
             // 
@@ -154,6 +155,7 @@ namespace CarreraFrontend.Forms
             this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.Text = "Universidad";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);

@@ -36,14 +36,16 @@ namespace CarreraFrontend.Forms.Carrera
             this.btnEditar_Carrera = new System.Windows.Forms.Button();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvConsultar_Carrera = new System.Windows.Forms.DataGridView();
-            this.col_Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_años = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cuatrimestres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.cboBuscarCarrera = new System.Windows.Forms.ComboBox();
             this.chkBaja = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsultar_Carrera = new System.Windows.Forms.Button();
+            this.col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.col_borrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultar_Carrera)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -109,9 +111,11 @@ namespace CarreraFrontend.Forms.Carrera
             this.dgvConsultar_Carrera.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultar_Carrera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultar_Carrera.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_Id,
             this.col_Carrera,
-            this.col_años,
-            this.col_cuatrimestres});
+            this.col_titulo,
+            this.col_editar,
+            this.col_borrar});
             this.dgvConsultar_Carrera.Location = new System.Drawing.Point(8, 23);
             this.dgvConsultar_Carrera.Name = "dgvConsultar_Carrera";
             this.dgvConsultar_Carrera.ReadOnly = true;
@@ -121,24 +125,7 @@ namespace CarreraFrontend.Forms.Carrera
             this.dgvConsultar_Carrera.RowTemplate.Height = 25;
             this.dgvConsultar_Carrera.Size = new System.Drawing.Size(719, 204);
             this.dgvConsultar_Carrera.TabIndex = 0;
-            // 
-            // col_Carrera
-            // 
-            this.col_Carrera.HeaderText = "Carrera";
-            this.col_Carrera.Name = "col_Carrera";
-            this.col_Carrera.ReadOnly = true;
-            // 
-            // col_años
-            // 
-            this.col_años.HeaderText = "Cantidad de Años";
-            this.col_años.Name = "col_años";
-            this.col_años.ReadOnly = true;
-            // 
-            // col_cuatrimestres
-            // 
-            this.col_cuatrimestres.HeaderText = "Cantidad de Cuatrimestres";
-            this.col_cuatrimestres.Name = "col_cuatrimestres";
-            this.col_cuatrimestres.ReadOnly = true;
+            this.dgvConsultar_Carrera.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultar_Carrera_CellContentClick);
             // 
             // gbFiltros
             // 
@@ -198,6 +185,41 @@ namespace CarreraFrontend.Forms.Carrera
             this.btnConsultar_Carrera.Text = "Consultar";
             this.btnConsultar_Carrera.UseVisualStyleBackColor = false;
             // 
+            // col_Id
+            // 
+            this.col_Id.HeaderText = "Id";
+            this.col_Id.Name = "col_Id";
+            this.col_Id.ReadOnly = true;
+            this.col_Id.Visible = false;
+            // 
+            // col_Carrera
+            // 
+            this.col_Carrera.HeaderText = "Carrera";
+            this.col_Carrera.Name = "col_Carrera";
+            this.col_Carrera.ReadOnly = true;
+            // 
+            // col_titulo
+            // 
+            this.col_titulo.HeaderText = "Titulo";
+            this.col_titulo.Name = "col_titulo";
+            this.col_titulo.ReadOnly = true;
+            // 
+            // col_editar
+            // 
+            this.col_editar.HeaderText = "Editar";
+            this.col_editar.Name = "col_editar";
+            this.col_editar.ReadOnly = true;
+            this.col_editar.Text = "Editar Carrera";
+            this.col_editar.UseColumnTextForButtonValue = true;
+            // 
+            // col_borrar
+            // 
+            this.col_borrar.HeaderText = "Borrar";
+            this.col_borrar.Name = "col_borrar";
+            this.col_borrar.ReadOnly = true;
+            this.col_borrar.Text = "Borrar Carrera";
+            this.col_borrar.UseColumnTextForButtonValue = true;
+            // 
             // ConsultarCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -230,13 +252,15 @@ namespace CarreraFrontend.Forms.Carrera
         private System.Windows.Forms.Button btnEditar_Carrera;
         private System.Windows.Forms.GroupBox gbResultados;
         private System.Windows.Forms.DataGridView dgvConsultar_Carrera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Carrera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_años;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_cuatrimestres;
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.ComboBox cboBuscarCarrera;
         private System.Windows.Forms.CheckBox chkBaja;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConsultar_Carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_titulo;
+        private System.Windows.Forms.DataGridViewButtonColumn col_editar;
+        private System.Windows.Forms.DataGridViewButtonColumn col_borrar;
     }
 }

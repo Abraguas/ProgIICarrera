@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Asignat = CarreraBackend.Entidades.Asignatura;
+
 
 namespace CarreraFrontend.Forms.Asignatura
 {
@@ -18,19 +20,17 @@ namespace CarreraFrontend.Forms.Asignatura
     {
         private ClienteSingleton cliente;
         private Accion modo;
-        private CarreraBackend.Entidades.Asignatura asignatura;
-        public AltaAsignatura(Accion modo, int nro)
+        private Asignat asignatura;
+        public AltaAsignatura(Accion modo, int id)
         {
             InitializeComponent();
-            asignatura = new CarreraBackend.Entidades.Asignatura();
+            asignatura = new Asignat();
             cliente = ClienteSingleton.GetInstancia();
             //servicio_asignatura = new AsignaturaService().Grabar();
             this.modo = modo;
-            if (modo.Equals(Accion.READ))
+            if(modo == Accion.UPDATE)
             {
-                btnAceptarAsig.Enabled = false;
-                this.Text = "Ver Asignatura";
-                // Cargar_AsignaturaAsync(nro);
+                asignatura.Id = id;
             }
         }
 
@@ -41,10 +41,33 @@ namespace CarreraFrontend.Forms.Asignatura
 
         private async void btnAceptarAsig_Click(object sender, EventArgs e)
         {
-            asignatura.Id = 0;
-            asignatura.Nombre = txtNom_Asignatura.Text;
-            await cliente.PostAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
+            if(modo == Accion.CREATE)
+            {
+                asignatura.Id = 0;
+                asignatura.Nombre = txtNom_Asignatura.Text;
+                await cliente.PostAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
+                MessageBox.Show("Se grabó la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNom_Asignatura.Clear();
+            }
+            else if (modo == Accion.UPDATE)
+            {
+                asignatura.Nombre = txtNom_Asignatura.Text;
+                await cliente.PutAsync("https://localhost:5001/api/Asignatura", JsonConvert.SerializeObject(asignatura));
+                MessageBox.Show("Se actualizó la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
+
+            }
+
         }
-     
+
+        private void AltaAsignatura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_CancelarAsig_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

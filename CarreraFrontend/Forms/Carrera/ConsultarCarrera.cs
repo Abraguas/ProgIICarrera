@@ -1,4 +1,6 @@
 ﻿using CarreraBackend.Servicios.Interfaces;
+using CarreraFrontend.Cliente;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,29 +10,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Asig = CarreraBackend.Entidades.Asignatura;
+using Carr = CarreraBackend.Entidades.Carrera;
 
 namespace CarreraFrontend.Forms.Carrera
 {
     public partial class ConsultarCarrera : Form
     {
-        private ICarreraService servicio_carrera;
-        private Accion modo;
-        public ConsultarCarrera(Accion modo)
+        private ClienteSingleton cliente;
+        public ConsultarCarrera()
         {
+
             InitializeComponent();
-            //servicio_carrera = new CarreraService().Grabar();
-            this.modo = modo;
-            if (modo.Equals(Accion.READ))
-            {
-                //btnAceptar.Enabled = false;
-                //this.Text = "Ver Carrera";
-                // Cargar_CarreraAsync(nro);
-            }
+            cliente = ClienteSingleton.GetInstancia();
+
         }
 
         private void ConsultarCarrera_Load(object sender, EventArgs e)
         {
+            CargarDgv();
+        }
+        private async void CargarDgv()
+        {
+            dgvConsultar_Carrera.Rows.Clear();
+            List<Carr> carreras;
+            string url = "https://localhost:5001/api/Carreras/Carrera";
+            var resultado = await cliente.GetAsync(url);
+            carreras = JsonConvert.DeserializeObject<List<Carr>>(resultado);
+            foreach (Carr carrera in carreras)
+            {
+                dgvConsultar_Carrera.Rows.Add(new object[] { carrera.Id, carrera.Nombre, carrera.Titulo });
 
+            }
+        }
+
+        private async void dgvConsultar_Carrera_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //EDITAR
+            if (e.ColumnIndex == 3)
+            {
+                int id = (int)dgvConsultar_Carrera.Rows[e.RowIndex].Cells[0].Value;
+                Alta_Carreras frmNueva_Asignatura = new Alta_Carreras(Accion.UPDATE, id);
+                frmNueva_Asignatura.ShowDialog();
+                CargarDgv();
+            }
+            //BORRAR
+            else if (e.ColumnIndex == 4)
+            {
+                int id = (int)dgvConsultar_Carrera.Rows[e.RowIndex].Cells[0].Value;
+                var result = (await BorrarCarreraAsync(id));
+                if (result == "true")
+                {
+                    MessageBox.Show("Se borró la asignatura con exito!!", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo borrar la asignatura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                CargarDgv();
+            }
+        }
+
+        private async Task<string> BorrarCarreraAsync(int id)
+        {
+            string url = "https://localhost:5001/api/Carreras/" + id;
+            var resultado = await cliente.DeleteAsync(url);
+            return resultado;
         }
     }
 }

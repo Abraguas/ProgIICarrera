@@ -54,6 +54,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.btn_CancelarAsig.TabIndex = 21;
             this.btn_CancelarAsig.Text = "Cancelar";
             this.btn_CancelarAsig.UseVisualStyleBackColor = false;
+            this.btn_CancelarAsig.Click += new System.EventHandler(this.btn_CancelarAsig_Click);
             // 
             // btnAceptarAsig
             // 
@@ -145,6 +146,7 @@ namespace CarreraFrontend.Forms.Asignatura
             this.MaximizeBox = false;
             this.Name = "AltaAsignatura";
             this.Text = "AltaAsignatura";
+            this.Load += new System.EventHandler(this.AltaAsignatura_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

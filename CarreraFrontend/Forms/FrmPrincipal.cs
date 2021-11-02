@@ -31,7 +31,7 @@ namespace CarreraFrontend.Forms
         }
         private void consultarCarrerasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarCarrera frmConsultar_carrera = new ConsultarCarrera(Accion.CREATE);
+            ConsultarCarrera frmConsultar_carrera = new ConsultarCarrera();
             frmConsultar_carrera.ShowDialog();
         }
 
@@ -43,11 +43,28 @@ namespace CarreraFrontend.Forms
 
         private void consultarAsignaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarAsignatura frmConsultar_Asignatura = new ConsultarAsignatura(Accion.CREATE);
+            ConsultarAsignatura frmConsultar_Asignatura = new ConsultarAsignatura();
             frmConsultar_Asignatura.ShowDialog();
 
         }
 
-  
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea salir del programa?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
