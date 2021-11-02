@@ -14,5 +14,7 @@ namespace CarreraBackend.Acceso_a_Datos
         bool ExistsByID(int id);
         bool Update(Carrera carrera);
         bool DeleteByID(int id);
+
+        int GetNextID();
     }
 }

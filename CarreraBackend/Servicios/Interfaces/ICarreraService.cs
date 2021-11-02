@@ -13,5 +13,6 @@ namespace CarreraBackend.Servicios.Interfaces
         public bool Grabar(Carrera oCarrera);
         public bool Actualizar(Carrera oCarrera);
         public bool Borrar(int id);
+        public int ObtenerProximoID();
     }
 }

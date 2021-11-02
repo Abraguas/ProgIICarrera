@@ -50,5 +50,9 @@ namespace CarreraBackend.Servicios.Implementaciones
             return dao.Save(oCarrera);
         }
 
+        public int ObtenerProximoID()
+        {
+            return dao.GetNextID();
+        }
     }
 }

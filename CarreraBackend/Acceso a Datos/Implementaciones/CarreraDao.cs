@@ -98,5 +98,11 @@ namespace CarreraBackend.Acceso_a_Datos
             int resultado = (int)helper.ConsultarEscalar("verificar_carrera_id", new Parametro("@id",Convert.ToString(id)));
             return resultado > 0;
         }
+
+        public int GetNextID()
+        {
+            return (int)helper.EjecutarSPSalida("carrera_proximo_id","@next");
+
+        }
     }
 }
