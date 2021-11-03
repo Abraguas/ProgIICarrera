@@ -19,7 +19,7 @@
   - [x]  actualizar_asignatura
   - [x]  actualizar_carrera
   - [x]  borrar_detalle
-- [ ] Testear
+- [x] Testear
 ### API:
 - [x] Get, Post, Put y Delete de las entidades que haga falta
 - [x] Testear
