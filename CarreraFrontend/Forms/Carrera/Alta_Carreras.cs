@@ -50,7 +50,6 @@ namespace CarreraFrontend.Forms
 
             }
         }
-
         private void Alta_Carreras_Load(object sender, EventArgs e)
         {
             Iniciar();
@@ -70,11 +69,10 @@ namespace CarreraFrontend.Forms
             await CargarCombo();
 
         }
-
         private async void CargarCarrera()
         {
 
-            string url = "https://localhost:5001/api/Carreras/" + oCarrera.Id;//4307(mati),5001(franco)
+            string url = "https://localhost:44307/api/Carreras/" + oCarrera.Id;//4307(mati),5001(franco)
             var resultado = await cliente.GetAsync(url);
             oCarrera = JsonConvert.DeserializeObject<Carr>(resultado);
 
@@ -140,11 +138,10 @@ namespace CarreraFrontend.Forms
 
 
         }
-
         private async Task<bool> GrabarDetalle(Detal oDetalle)
         {
             string data = JsonConvert.SerializeObject(oDetalle);
-            string url = "https://localhost:5001/api/Detalles/" + oCarrera.Id;
+            string url = "https://localhost:44307/api/Detalles/" + oCarrera.Id;
 
             if ((await cliente.PostAsync(url, data)) == "Ok")
             {
@@ -160,7 +157,7 @@ namespace CarreraFrontend.Forms
         }
         private async void BorrarDetalle(int id)
         {
-            string url = "https://localhost:5001/api/Detalles/" + id;
+            string url = "https://localhost:44307/api/Detalles/" + id;
 
             if ((await cliente.DeleteAsync(url)) == "true")
             {
@@ -186,7 +183,7 @@ namespace CarreraFrontend.Forms
             string data = JsonConvert.SerializeObject(oCarrera);
 
 
-            string url = "https://localhost:5001/api/Carreras";
+            string url = "https://localhost:44307/api/Carreras";
 
             if (modo == Accion.CREATE)
             {
@@ -215,7 +212,6 @@ namespace CarreraFrontend.Forms
             }
 
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Está seguro que desea cancelar el registro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -226,23 +222,9 @@ namespace CarreraFrontend.Forms
         }
 
         //METODOS PRIVATE
-        //private async Task Cargar_CarrreraAsync()
-        //{
-        //    //44307 (mati)
-        //    //string url = "https://localhost:44307/api/Carreras/ProximoId";
-        //    //var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
-        //    //this.oCarrera.Id = JsonConvert.DeserializeObject<int>(resultado);
-
-        //    dgvAsignaturas.Rows.Clear();
-        //    foreach (DetalleCarrera oDetalle in oCarrera.Detalles)
-        //    {
-        //        dgvAsignaturas.Rows.Add(new object[] { "" ,oDetalle.Materia.Nombre, oDetalle.AnioCursado, oDetalle.Cuatrimestre }); ;
-        //    }
-        //}
-
         private async Task CargarCombo()
         {
-            string url = "https://localhost:5001/api/Asignatura/Asignatura";
+            string url = "https://localhost:44307/api/Asignatura/Asignatura";
             var resultado = await cliente.GetAsync(url);
             List<Asign> lst = JsonConvert.DeserializeObject<List<Asign>>(resultado);
             cboMateria.DataSource = lst;
@@ -258,17 +240,15 @@ namespace CarreraFrontend.Forms
             nudCuatrimestre.Value = 0;
             dgvAsignaturas.Rows.Clear();
         }
-
         private async void AsignarNumeroCarrreraAsync()
         {
-            string url = "https://localhost:5001/api/Carreras/ProximoId";
+            string url = "https://localhost:44307/api/Carreras/ProximoId";
             var resultado = await cliente.GetAsync(url);
             int id = JsonConvert.DeserializeObject<int>(resultado);
             oCarrera.Id = id;
             lblCarreraNro.Text = "    Carrera Nro: " + id;
 
         }
-
         private bool ExisteProductoEnGrilla(string text)
         {
             foreach (DataGridViewRow fila in dgvAsignaturas.Rows)
@@ -298,13 +278,24 @@ namespace CarreraFrontend.Forms
                     {
                         BorrarDetalle(id);
                     }
-
-
-                    
                 }
             }
-
         }
+
+
+        //private async Task Cargar_CarrreraAsync()
+        //{
+        //    //44307 (mati)
+        //    //string url = "https://localhost:44307/api/Carreras/ProximoId";
+        //    //var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+        //    //this.oCarrera.Id = JsonConvert.DeserializeObject<int>(resultado);
+
+        //    dgvAsignaturas.Rows.Clear();
+        //    foreach (DetalleCarrera oDetalle in oCarrera.Detalles)
+        //    {
+        //        dgvAsignaturas.Rows.Add(new object[] { "" ,oDetalle.Materia.Nombre, oDetalle.AnioCursado, oDetalle.Cuatrimestre }); ;
+        //    }
+        //}
 
         //----------------------------------------------------------------
         private void lblCarreraNro_Click(object sender, EventArgs e)

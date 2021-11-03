@@ -20,12 +20,9 @@ namespace CarreraFrontend.Forms.Carrera
         private ClienteSingleton cliente;
         public ConsultarCarrera()
         {
-
             InitializeComponent();
             cliente = ClienteSingleton.GetInstancia();
-
         }
-
         private void ConsultarCarrera_Load(object sender, EventArgs e)
         {
             CargarDgv();
@@ -34,7 +31,7 @@ namespace CarreraFrontend.Forms.Carrera
         {
             dgvConsultar_Carrera.Rows.Clear();
             List<Carr> carreras;
-            string url = "https://localhost:5001/api/Carreras/Carrera";//4307(mati), 5001(franco)
+            string url = "https://localhost:44307/api/Carreras/Carrera";//4307(mati), 5001(franco)
             var resultado = await cliente.GetAsync(url);
             carreras = JsonConvert.DeserializeObject<List<Carr>>(resultado);
             foreach (Carr carrera in carreras)
@@ -43,7 +40,6 @@ namespace CarreraFrontend.Forms.Carrera
 
             }
         }
-
         private async void dgvConsultar_Carrera_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //EDITAR
@@ -70,10 +66,9 @@ namespace CarreraFrontend.Forms.Carrera
                 CargarDgv();
             }
         }
-
         private async Task<string> BorrarCarreraAsync(int id)
         {
-            string url = "https://localhost:5001/api/Carreras/" + id;//4307(mati),//5001(franco)
+            string url = "https://localhost:44307/api/Carreras/" + id;//4307(mati),//5001(franco)
             var resultado = await cliente.DeleteAsync(url);
             return resultado;
         }
