@@ -33,9 +33,6 @@ namespace CarreraFrontend.Forms.Asignatura
                 asignatura.Id = id;
             }
         }
-
-   
-
         private async void btnAceptarAsig_Click(object sender, EventArgs e)
         {
             if (txtNom_Asignatura.Text.Trim() == "")
@@ -70,6 +67,7 @@ namespace CarreraFrontend.Forms.Asignatura
             }
         }
 
+        //-------------------------------------------------------------
         private void AltaAsignatura_Load(object sender, EventArgs e)
         {
 

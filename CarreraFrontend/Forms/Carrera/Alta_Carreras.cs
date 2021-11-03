@@ -192,6 +192,7 @@ namespace CarreraFrontend.Forms
                     MessageBox.Show("Carrera registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
                     AsignarNumeroCarrreraAsync();
+                    this.Dispose();
                 }
                 else
                 {
@@ -210,6 +211,7 @@ namespace CarreraFrontend.Forms
                     MessageBox.Show("Ha ocurrido un inconveniente al actualizar la Carrera!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)

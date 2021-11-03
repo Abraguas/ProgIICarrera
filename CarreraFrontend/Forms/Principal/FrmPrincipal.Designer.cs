@@ -39,7 +39,6 @@ namespace CarreraFrontend.Forms
             this.carrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarNuevaCarreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCarrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportestoolAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.integrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,6 @@ namespace CarreraFrontend.Forms
             this.archivoToolStripMenuItem,
             this.soporteToolStripMenuItem,
             this.carrerasToolStripMenuItem,
-            this.reportesToolStripMenuItem,
             this.reportestoolAcercaDe});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
@@ -127,12 +125,6 @@ namespace CarreraFrontend.Forms
             this.consultarCarrerasToolStripMenuItem.Text = "Consultar Carreras";
             this.consultarCarrerasToolStripMenuItem.Click += new System.EventHandler(this.consultarCarrerasToolStripMenuItem_Click);
             // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
             // reportestoolAcercaDe
             // 
             this.reportestoolAcercaDe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -192,7 +184,6 @@ namespace CarreraFrontend.Forms
         private System.Windows.Forms.ToolStripMenuItem carrerasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarNuevaCarreraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarCarrerasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem reportestoolAcercaDe;
         private System.Windows.Forms.ToolStripMenuItem integrantesToolStripMenuItem;

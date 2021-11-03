@@ -18,12 +18,10 @@ namespace CarreraFrontend.Forms
         {
             InitializeComponent();
         }
-
         private void soporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
         private void cargarNuevaCarreraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Alta_Carreras frmNueva_carrera = new Alta_Carreras (Accion.CREATE , 0);
@@ -34,25 +32,21 @@ namespace CarreraFrontend.Forms
             ConsultarCarrera frmConsultar_carrera = new ConsultarCarrera();
             frmConsultar_carrera.ShowDialog();
         }
-
         private void agregarAsignaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AltaAsignatura frmNueva_Asignatura = new AltaAsignatura (Accion.CREATE, 0);
             frmNueva_Asignatura.ShowDialog();
         }
-
         private void consultarAsignaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarAsignatura frmConsultar_Asignatura = new ConsultarAsignatura();
             frmConsultar_Asignatura.ShowDialog();
 
         }
-
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
         }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Está seguro que desea salir del programa?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -66,7 +60,6 @@ namespace CarreraFrontend.Forms
                 return;
             }
         }
-
         private void integrantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Acerca_de integrantes = new Acerca_de();

@@ -17,7 +17,7 @@ namespace CarreraFrontend.Forms
             InitializeComponent();
         }
 
-        string usuario = "Grupo16";
+        string usuario = "Grupo17";
         string contraseña = "utn2021";
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -45,6 +45,11 @@ namespace CarreraFrontend.Forms
         //    {
         //        Application.Run(new FrmPrincipal());
          }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
 
         //}
     }

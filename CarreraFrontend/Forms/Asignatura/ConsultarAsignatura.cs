@@ -17,15 +17,12 @@ namespace CarreraFrontend.Forms.Asignatura
 {
     public partial class ConsultarAsignatura : Form
     {
-
-
         private ClienteSingleton cliente;
         public ConsultarAsignatura()
         {
             InitializeComponent();
             cliente = ClienteSingleton.GetInstancia();
         }
-
         private void ConsultarAsignatura_Load(object sender, EventArgs e)
         {
             CargarDgv();

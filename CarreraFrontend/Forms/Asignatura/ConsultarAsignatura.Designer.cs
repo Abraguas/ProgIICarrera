@@ -130,6 +130,7 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             // col_editar
             // 
+            this.col_editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.col_editar.HeaderText = "Editar";
             this.col_editar.Name = "col_editar";
             this.col_editar.ReadOnly = true;
@@ -140,6 +141,7 @@ namespace CarreraFrontend.Forms.Asignatura
             // 
             // col_borrar
             // 
+            this.col_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.col_borrar.HeaderText = "Borrar";
             this.col_borrar.Name = "col_borrar";
             this.col_borrar.ReadOnly = true;
@@ -175,8 +177,8 @@ namespace CarreraFrontend.Forms.Asignatura
         private System.Windows.Forms.Button btnEditar_Asig;
         private System.Windows.Forms.GroupBox gbResultados;
         private System.Windows.Forms.DataGridView dgvConsultar_Asignatura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Nombre;
         private System.Windows.Forms.DataGridViewButtonColumn col_editar;
         private System.Windows.Forms.DataGridViewButtonColumn col_borrar;
     }

@@ -30,8 +30,8 @@ namespace CarreraFrontend.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alta_Carreras));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCarreraNro = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,18 +43,18 @@ namespace CarreraFrontend.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.txtNom_Carrera = new System.Windows.Forms.TextBox();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
-            this.col_idAsignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_idDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_quitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nudCuatrimestre = new System.Windows.Forms.NumericUpDown();
             this.nudAñosCursado = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar_Asig = new System.Windows.Forms.Button();
+            this.col_idAsignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_idDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_quitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
@@ -184,14 +184,14 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(136)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(136)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_idAsignatura,
@@ -205,55 +205,15 @@ namespace CarreraFrontend.Forms
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.ReadOnly = true;
             this.dgvAsignaturas.RowHeadersWidth = 47;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvAsignaturas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvAsignaturas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAsignaturas.RowTemplate.Height = 25;
             this.dgvAsignaturas.Size = new System.Drawing.Size(696, 218);
             this.dgvAsignaturas.TabIndex = 23;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignatura_Quitar_CellContentClick);
-            // 
-            // col_idAsignatura
-            // 
-            this.col_idAsignatura.HeaderText = "Id Asignatura";
-            this.col_idAsignatura.Name = "col_idAsignatura";
-            this.col_idAsignatura.ReadOnly = true;
-            this.col_idAsignatura.Visible = false;
-            // 
-            // col_idDetalle
-            // 
-            this.col_idDetalle.HeaderText = "Id";
-            this.col_idDetalle.Name = "col_idDetalle";
-            this.col_idDetalle.ReadOnly = true;
-            this.col_idDetalle.Visible = false;
-            // 
-            // col_Asignatura
-            // 
-            this.col_Asignatura.HeaderText = "Asignatura";
-            this.col_Asignatura.Name = "col_Asignatura";
-            this.col_Asignatura.ReadOnly = true;
-            // 
-            // col_año
-            // 
-            this.col_año.HeaderText = "Año de cursado";
-            this.col_año.Name = "col_año";
-            this.col_año.ReadOnly = true;
-            // 
-            // col_cuatrimestre
-            // 
-            this.col_cuatrimestre.HeaderText = "Numero de Cuatrimestre";
-            this.col_cuatrimestre.Name = "col_cuatrimestre";
-            this.col_cuatrimestre.ReadOnly = true;
-            // 
-            // btn_quitar
-            // 
-            this.btn_quitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_quitar.HeaderText = "Quitar";
-            this.btn_quitar.Name = "btn_quitar";
-            this.btn_quitar.ReadOnly = true;
-            this.btn_quitar.Text = "X";
             // 
             // nudCuatrimestre
             // 
@@ -297,9 +257,9 @@ namespace CarreraFrontend.Forms
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(48, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 19);
+            this.label3.Size = new System.Drawing.Size(108, 19);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Años de Cursado";
+            this.label3.Text = "Año de Cursado";
             // 
             // label2
             // 
@@ -324,6 +284,47 @@ namespace CarreraFrontend.Forms
             this.btnAgregar_Asig.Text = "Agregar";
             this.btnAgregar_Asig.UseVisualStyleBackColor = false;
             this.btnAgregar_Asig.Click += new System.EventHandler(this.btnAgregar_Asig_Click);
+            // 
+            // col_idAsignatura
+            // 
+            this.col_idAsignatura.HeaderText = "Id Asignatura";
+            this.col_idAsignatura.Name = "col_idAsignatura";
+            this.col_idAsignatura.ReadOnly = true;
+            this.col_idAsignatura.Visible = false;
+            // 
+            // col_idDetalle
+            // 
+            this.col_idDetalle.HeaderText = "Id";
+            this.col_idDetalle.Name = "col_idDetalle";
+            this.col_idDetalle.ReadOnly = true;
+            this.col_idDetalle.Visible = false;
+            // 
+            // col_Asignatura
+            // 
+            this.col_Asignatura.HeaderText = "Asignatura";
+            this.col_Asignatura.Name = "col_Asignatura";
+            this.col_Asignatura.ReadOnly = true;
+            // 
+            // col_año
+            // 
+            this.col_año.HeaderText = "Año de cursado";
+            this.col_año.Name = "col_año";
+            this.col_año.ReadOnly = true;
+            // 
+            // col_cuatrimestre
+            // 
+            this.col_cuatrimestre.HeaderText = "Numero de Cuatrimestre";
+            this.col_cuatrimestre.Name = "col_cuatrimestre";
+            this.col_cuatrimestre.ReadOnly = true;
+            // 
+            // btn_quitar
+            // 
+            this.btn_quitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_quitar.HeaderText = "Quitar";
+            this.btn_quitar.Name = "btn_quitar";
+            this.btn_quitar.ReadOnly = true;
+            this.btn_quitar.Text = "Quitar";
+            this.btn_quitar.UseColumnTextForButtonValue = true;
             // 
             // Alta_Carreras
             // 
