@@ -7,7 +7,7 @@
 
 ## Por hacer:
 ### Backend:
-- [ ] Completar el CRUD
+- [x] Completar el CRUD
 - [x] Dao para asignaturas si decidimos hacerlo (hecho en branch crud)
 - [x] Crear los SP que falten:
   - [x]  consultar_detalle_id (consultar detalle segun el id_carrera)
@@ -21,11 +21,11 @@
   - [x]  borrar_detalle
 - [ ] Testear
 ### API:
-- [ ] Get, Post, Put y Delete de las entidades que haga falta
-- [ ] Testear
+- [x] Get, Post, Put y Delete de las entidades que haga falta
+- [x] Testear
 ### Frontend:
-- [ ] Idear el form
-- [ ] Implementar
-- [ ] Trabajar el diseño
-- [ ] Testear
+- [x] Idear el form
+- [x] Implementar
+- [x] Trabajar el diseño
+- [x] Testear
 
