@@ -72,10 +72,5 @@ namespace CarreraFrontend.Forms
             Acerca_de integrantes = new Acerca_de();
             integrantes.ShowDialog();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

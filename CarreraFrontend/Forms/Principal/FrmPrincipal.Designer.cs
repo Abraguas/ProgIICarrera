@@ -41,8 +41,8 @@ namespace CarreraFrontend.Forms
             this.consultarCarrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportestoolAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
-            this.integrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.integrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,13 +141,6 @@ namespace CarreraFrontend.Forms
             this.reportestoolAcercaDe.Size = new System.Drawing.Size(71, 20);
             this.reportestoolAcercaDe.Text = "Acerca de";
             // 
-            // integrantesToolStripMenuItem
-            // 
-            this.integrantesToolStripMenuItem.Name = "integrantesToolStripMenuItem";
-            this.integrantesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.integrantesToolStripMenuItem.Text = "Integrantes";
-            this.integrantesToolStripMenuItem.Click += new System.EventHandler(this.integrantesToolStripMenuItem_Click);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -160,7 +153,13 @@ namespace CarreraFrontend.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 464);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // integrantesToolStripMenuItem
+            // 
+            this.integrantesToolStripMenuItem.Name = "integrantesToolStripMenuItem";
+            this.integrantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.integrantesToolStripMenuItem.Text = "Integrantes";
+            this.integrantesToolStripMenuItem.Click += new System.EventHandler(this.integrantesToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
