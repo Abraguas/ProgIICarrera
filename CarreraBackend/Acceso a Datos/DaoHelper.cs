@@ -8,6 +8,7 @@ using System.Data;
 
 //@"Data Source=DESKTOP-OPJRSO7;Initial Catalog=db_carrera1;Integrated Security=True";(mati)
 //@"Data Source=localhost;Initial Catalog=db_carrera;Integrated Security=True" (franco)
+//@"Data Source=LAPTOP-6SKGEOLC\SQLEXPRESS;Initial Catalog=db_carrera;Integrated Security=True" (sofi)
 namespace CarreraBackend.Acceso_a_Datos
 {
     class DaoHelper
@@ -18,7 +19,7 @@ namespace CarreraBackend.Acceso_a_Datos
 
         public DaoHelper()
         {
-            cadenaConexion = @"Data Source=localhost;Initial Catalog=db_carrera;Integrated Security=True";
+            cadenaConexion = @"Data Source=LAPTOP-6SKGEOLC\SQLEXPRESS;Initial Catalog=db_carrera;Integrated Security=True";
             conexion = new SqlConnection(cadenaConexion);
         }
 
