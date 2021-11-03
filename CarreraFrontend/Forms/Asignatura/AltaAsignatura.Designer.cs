@@ -96,9 +96,9 @@ namespace CarreraFrontend.Forms.Asignatura
             this.lblAsignaturaNro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAsignaturaNro.Location = new System.Drawing.Point(14, 9);
             this.lblAsignaturaNro.Name = "lblAsignaturaNro";
-            this.lblAsignaturaNro.Size = new System.Drawing.Size(225, 30);
+            this.lblAsignaturaNro.Size = new System.Drawing.Size(174, 30);
             this.lblAsignaturaNro.TabIndex = 17;
-            this.lblAsignaturaNro.Text = "       Asignatura Nro: ";
+            this.lblAsignaturaNro.Text = "       Asignatura:";
             // 
             // panel1
             // 

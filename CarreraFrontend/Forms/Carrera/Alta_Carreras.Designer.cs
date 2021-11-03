@@ -201,7 +201,7 @@ namespace CarreraFrontend.Forms
             this.col_cuatrimestre,
             this.btn_quitar});
             this.dgvAsignaturas.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(12, 278);
+            this.dgvAsignaturas.Location = new System.Drawing.Point(9, 278);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.ReadOnly = true;
             this.dgvAsignaturas.RowHeadersWidth = 47;
@@ -295,11 +295,11 @@ namespace CarreraFrontend.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(48, 163);
+            this.label3.Location = new System.Drawing.Point(53, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 19);
+            this.label3.Size = new System.Drawing.Size(108, 19);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Años de Cursado";
+            this.label3.Text = "Año de Cursado";
             // 
             // label2
             // 
